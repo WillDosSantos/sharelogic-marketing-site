@@ -10,10 +10,10 @@ type Props = {
 
 export function SectionIntro({ title, description, className }: Props) {
   return (
-    <Container className={cn("py-12 sm:py-14", className)}>
+    <Container className={cn("pt-12 pb-0 sm:pt-14 sm:pb-0", className)}>
       <FadeUp className="max-w-3xl">
         <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{title}</h2>
-        {description ? <p className="mt-4 text-pretty text-base leading-relaxed text-slate-600">{description}</p> : null}
+        {description ? <p className="mt-4 text-pretty text-base leading-relaxed text-xl text-slate-600">{description}</p> : null}
       </FadeUp>
     </Container>
   );

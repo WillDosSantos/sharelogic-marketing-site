@@ -1,12 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/utils/metadata";
 import { Container } from "@/components/layout/Container";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { Hero } from "@/components/sections/Hero";
-import { LogoStrip } from "@/components/sections/LogoStrip";
 import { SectionIntro } from "@/components/sections/SectionIntro";
-import { StatsRow } from "@/components/sections/StatsRow";
+import { HomeSection4Showcase } from "@/components/home/HomeSection4Showcase";
+import { HomeSection5Showcase } from "@/components/home/HomeSection5Showcase";
 import { HomeHeroArtboard } from "@/components/home/HomeHeroImages";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
@@ -44,30 +45,60 @@ export default function HomePage() {
         columns={3}
         items={[
           {
-            title: "Governance by design",
+            title: "What shows up during incidents",
             description:
-              "Embed policy checks, approvals, and audit trails into integration lifecycles—not as a late-stage scramble.",
+              "When incidents occur, teams face unclear ownership, undocumented logic, and hidden dependencies in integrations. Fixes depend on tribal knowledge rather than a shared understanding. Effective governance is key to resolving incidents swiftly and preventing outages.",
+            iconSrc: "/section-2/icon-incident.svg",
           },
           {
-            title: "Operational visibility",
+            title: "What accumulates over time",
             description:
-              "Trace workflows across systems with signals operators can act on, not logs they have to decode.",
+              "Point-to-point logic spans various platforms. Documentation can become outdated, and exceptions accumulate. Each modification raises the risk, even if everything seems fine. Without proper governance, complexity builds up unnoticed.",
+            iconSrc: "/section-2/icon-cube.svg",
           },
           {
-            title: "Scalable patterns",
+            title: "What becomes hard to explain",
             description:
-              "Standardize how teams ship integrations so quality improves as adoption grows—not the other way around.",
+              "The reasons for an integration's existence, ownership, and potential impacts of changes are often unclear. Governance equips leaders with the necessary language to justify their decisions, conduct audits, and secure investments.",
+            iconSrc: "/section-2/icon-warning.svg",
           },
         ]}
       />
 
-      <StatsRow
-        stats={[
-          { label: "Average reduction in manual reconciliation (sample)", value: "37%", hint: "Placeholder metric for demo content." },
-          { label: "Faster incident correlation across toolchains (sample)", value: "2.1×", hint: "Placeholder metric for demo content." },
-          { label: "Programs delivered with executive-ready reporting", value: "120+", hint: "Placeholder metric for demo content." },
-        ]}
-      />
+      <section
+        id="section-3"
+        className="border-t border-slate-200 bg-[#2750F5]"
+        aria-labelledby="section-3-heading"
+      >
+        <Container className="py-12 sm:py-14">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
+            <FadeUp className="flex min-w-0 shrink-0 justify-center lg:w-[46%] lg:justify-start">
+              <div className="relative w-full max-w-xl">
+                <Image
+                  src="/section-3/illustrations/img-grid-cube.png"
+                  alt=""
+                  width={809}
+                  height={740}
+                  className="h-auto w-full object-contain object-left"
+                  sizes="(max-width: 1024px) 100vw, 46vw"
+                />
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.06} className="min-w-0 lg:flex-1">
+              <h2 id="section-3-heading" className="text-3xl font-semibold tracking-tight text-white">
+                The integration governance layer for ServiceNow
+              </h2>
+              <p className="mt-4 text-pretty text-base text-xl leading-relaxed text-white">
+                ShareLogic enhances governance and visibility in ServiceNow, ensuring consistent tool usage and informed
+                decision-making across sectors.
+              </p>
+            </FadeUp>
+          </div>
+        </Container>
+      </section>
+
+      <HomeSection4Showcase />
+      <HomeSection5Showcase />
 
       <section className="border-t border-slate-200 bg-white">
         <Container className="py-12 sm:py-14">
