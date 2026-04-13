@@ -1,0 +1,84 @@
+import Link from "next/link";
+import { Container } from "@/components/layout/Container";
+import { Hero } from "@/components/sections/Hero";
+import { CtaBand } from "@/components/sections/CtaBand";
+import { openRoles } from "@/lib/data/careers";
+import { buildMetadata } from "@/lib/utils/metadata";
+
+export const metadata = buildMetadata({
+  title: "Careers",
+  description:
+    "Join ShareLogic and help enterprises build integration programs that are governable, observable, and scalable.",
+  path: "/careers",
+});
+
+export default function CareersPage() {
+  return (
+    <>
+      <Hero
+        title="Build software that enterprises run in production"
+        subtitle="ShareLogic is a cross-functional team of engineers, architects, and customer partners focused on reliability, security, and pragmatic delivery."
+      />
+
+      <section className="border-t border-slate-200 bg-white">
+        <Container className="py-12 sm:py-14">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900">How we work</h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-6">
+              <h3 className="text-base font-semibold text-slate-900">Ownership</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                Small teams with clear accountability—fewer handoffs, more end-to-end responsibility.
+              </p>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-6">
+              <h3 className="text-base font-semibold text-slate-900">Craft</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                We care about operational detail: observability, failure modes, and supportability.
+              </p>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-6">
+              <h3 className="text-base font-semibold text-slate-900">Trust</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                We work with regulated customers—security and integrity aren’t optional extras.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-slate-200 bg-slate-50/60">
+        <Container className="py-12 sm:py-14">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Open roles</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600">
+            These listings are mock data for the starter. Replace with your ATS links when ready.
+          </p>
+          <ul className="mt-8 divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
+            {openRoles.map((role) => (
+              <li key={role.id} className="flex flex-col gap-2 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-base font-semibold text-slate-900">{role.title}</p>
+                  <p className="mt-1 text-sm text-slate-600">
+                    {role.department} · {role.location} · {role.type}
+                  </p>
+                </div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50"
+                >
+                  Apply (placeholder)
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      <CtaBand
+        headline="Don’t see the right role?"
+        body="We’re always interested in meeting strong engineers and field practitioners. Send a note with your background and what you want to work on."
+        primaryLabel="General inquiry"
+        primaryHref="/contact"
+      />
+    </>
+  );
+}
