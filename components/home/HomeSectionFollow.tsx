@@ -10,8 +10,6 @@ export function HomeSectionFollow() {
       aria-labelledby="section-follow-heading"
     >
       <div className="pointer-events-none absolute inset-0 bg-white" aria-hidden />
-   
-
       <div className="pointer-events-none absolute -left-8 top-6 opacity-75 sm:-left-12 sm:opacity-90 lg:left-4 lg:top-16">
         <Image
           src="/section-follow/cubset-1.svg"

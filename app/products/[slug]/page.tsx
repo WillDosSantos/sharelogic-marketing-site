@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { ProductTemplate } from "@/components/templates/ProductTemplate";
+import { UnifiProductTemplate } from "@/components/templates/UnifiProductTemplate";
 import { getProductBySlug, products } from "@/lib/data/products";
 import { buildMetadata } from "@/lib/utils/metadata";
 
@@ -24,5 +25,8 @@ export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) notFound();
+  if (product.slug === "unifi") {
+    return <UnifiProductTemplate product={product} />;
+  }
   return <ProductTemplate product={product} />;
 }
