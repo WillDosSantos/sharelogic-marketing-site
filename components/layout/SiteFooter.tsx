@@ -8,18 +8,18 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto border-t border-slate-200 bg-slate-50">
+    <footer className="mt-auto border-t border-white/10 bg-[#000000] text-white">
       <Container as="div" className="py-12 sm:py-14">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Logo />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">{siteConfig.description}</p>
+            <Logo variant="onDark" />
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">{siteConfig.description}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               {siteConfig.social.map((s) => (
                 <a
                   key={s.href}
                   href={s.href}
-                  className="text-sm font-semibold text-slate-800 underline underline-offset-4 hover:text-slate-950"
+                  className="text-sm font-semibold text-white underline underline-offset-4 hover:text-white/80"
                 >
                   {s.label}
                 </a>
@@ -30,11 +30,11 @@ export function SiteFooter() {
           <div className="grid gap-8 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-5">
             {mainNavigation.map((group) => (
               <div key={group.id}>
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{group.label}</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-white/55">{group.label}</p>
                 <ul className="mt-3 space-y-2">
                   {group.children.map((child) => (
                     <li key={child.href}>
-                      <Link href={child.href} className="text-sm text-slate-700 hover:text-slate-950">
+                      <Link href={child.href} className="text-sm text-white/90 hover:text-white">
                         {child.label}
                       </Link>
                     </li>
@@ -45,14 +45,14 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-slate-200 pt-8 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-8 text-sm text-white/75 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {siteConfig.legalName}. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-x-4 gap-y-2">
-            <span className="text-slate-500">Privacy placeholder</span>
-            <span className="text-slate-500">Terms placeholder</span>
-            <span className="text-slate-500">Security placeholder</span>
+            <span className="text-white/55">Privacy placeholder</span>
+            <span className="text-white/55">Terms placeholder</span>
+            <span className="text-white/55">Security placeholder</span>
           </div>
         </div>
       </Container>

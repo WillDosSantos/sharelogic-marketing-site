@@ -1,16 +1,17 @@
 import Image from "next/image";
-import Link from "next/link";
 import { buildMetadata } from "@/lib/utils/metadata";
 import { Container } from "@/components/layout/Container";
-import { CtaBand } from "@/components/sections/CtaBand";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { Hero } from "@/components/sections/Hero";
 import { SectionIntro } from "@/components/sections/SectionIntro";
+import { TrustedBy } from "@/components/sections/TrustedBy";
 import { HomeSection4Showcase } from "@/components/home/HomeSection4Showcase";
 import { HomeSection5Showcase } from "@/components/home/HomeSection5Showcase";
+import { HomeSection6Products } from "@/components/home/HomeSection6Products";
+import { HomeSection7Documentation } from "@/components/home/HomeSection7Documentation";
+import { HomeSectionFollow } from "@/components/home/HomeSectionFollow";
 import { HomeHeroArtboard } from "@/components/home/HomeHeroImages";
 import { FadeUp } from "@/components/motion/FadeUp";
-import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { siteConfig } from "@/lib/data/site";
 
@@ -99,64 +100,11 @@ export default function HomePage() {
 
       <HomeSection4Showcase />
       <HomeSection5Showcase />
+      <HomeSection6Products />
+      <TrustedBy />
+      <HomeSection7Documentation />
 
-      <section className="border-t border-slate-200 bg-white">
-        <Container className="py-12 sm:py-14">
-          <FadeUp className="max-w-3xl">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">What leaders ask for—and what we optimize for</h2>
-            <p className="mt-4 text-pretty text-base leading-relaxed text-slate-600">
-              ShareLogic is intentionally boring in the best way: clear ownership, predictable change, and measurable reliability. That’s what makes it possible to modernize without turning weekends into war rooms.
-            </p>
-          </FadeUp>
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            <FadeUp delay={0.08}>
-              <TestimonialCard
-                quote="We stopped treating integrations like side projects. The program finally has the same rigor we expect from customer-facing products."
-                name="Placeholder CIO"
-                title="Global Financial Services"
-              />
-            </FadeUp>
-            <FadeUp delay={0.14}>
-              <TestimonialCard
-                quote="The biggest win was visibility—our operators could see where work was stuck before it became customer impact."
-                name="Placeholder VP Operations"
-                title="Healthcare Network"
-              />
-            </FadeUp>
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-t border-slate-200 bg-slate-50/60">
-        <Container className="py-12 sm:py-14">
-          <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
-            <FadeUp className="max-w-2xl">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Start with a focused footprint</h2>
-              <p className="mt-3 text-pretty text-base leading-relaxed text-slate-600">
-                Pick a high-impact workflow, prove reliability, then expand patterns across business units. ShareLogic is modular so your roadmap can stay pragmatic.
-              </p>
-            </FadeUp>
-            <FadeUp delay={0.1} className="flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/news"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-white"
-              >
-                Read the latest news
-              </Link>
-              <LinkButton href="/contact">Book a consultation</LinkButton>
-            </FadeUp>
-          </div>
-        </Container>
-      </section>
-
-      <CtaBand
-        headline="Ready for an integration architecture review?"
-        body="ShareLogic can help you prioritize workflows, define governance guardrails, and build a roadmap that matches your risk profile."
-        primaryLabel="Contact us"
-        primaryHref="/contact"
-        secondaryLabel="Explore products"
-        secondaryHref="/products/product-comparison"
-      />
+      <HomeSectionFollow />
     </>
   );
 }

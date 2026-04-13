@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils/cn";
 
 type Props = {
   className?: string;
-  /** Header (blue bar): full-color SVG. Footer: dark treatment for light backgrounds. */
-  variant?: "default" | "onBrand";
+  /** Header (blue bar): full-color SVG. Footer on light bg: black mark. Footer on black: white mark. */
+  variant?: "default" | "onBrand" | "onDark";
 };
 
 export function Logo({ className, variant = "default" }: Props) {
@@ -21,6 +21,7 @@ export function Logo({ className, variant = "default" }: Props) {
         className={cn(
           "h-9 w-auto max-w-32 object-contain object-left sm:h-10",
           variant === "default" && "brightness-0",
+          variant === "onDark" && "brightness-0 invert",
         )}
       />
     </Link>
