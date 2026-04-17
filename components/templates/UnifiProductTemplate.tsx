@@ -4,11 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { SectionIntro } from "@/components/sections/SectionIntro";
 import { Container } from "@/components/layout/Container";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { BUTTON_MOTION } from "@/lib/motion/button";
-import { ContentCard } from "@/components/ui/ContentCard";
+import { HomeSectionFollow } from "@/components/home/HomeSectionFollow";
 import type { ProductPageContent } from "@/lib/types/content";
 
 const HERO_BG = "#2D5BFF";
@@ -626,33 +625,63 @@ export function UnifiProductTemplate({ product }: Props) {
         </Container>
       </section>
 
-      <SectionIntro title="Overview" description={product.intro} />
-
-      <section className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2">
-            <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-6">
-              <h2 className="text-lg font-semibold text-slate-900">{product.problem.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">{product.problem.body}</p>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-slate-900">{product.solution.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">{product.solution.body}</p>
-            </div>
+      <section
+        id="unifi-right-fit"
+        className="border-t border-slate-200 bg-white"
+        aria-labelledby="unifi-right-fit-heading"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.22) 1px, transparent 1.4px), radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.14) 1px, transparent 1.4px)",
+          backgroundSize: "10px 10px, 10px 10px",
+          backgroundPosition: "70% 0, 70% 0",
+        }}
+      >
+        <Container className="py-14 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-4xl text-center">
+            <FadeUp>
+              <p className="text-xs font-bold uppercase tracking-wide text-[#2750F5]">The right fit</p>
+            </FadeUp>
+            <FadeUp delay={0.06}>
+              <h2 id="unifi-right-fit-heading" className="mt-3 text-balance text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+                Where Unifi is the right choice
+              </h2>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <p className="mt-4 text-pretty text-lg leading-relaxed text-slate-600">
+                Unifi is designed for organizations where integrations are business-critical and long-lived.
+              </p>
+            </FadeUp>
           </div>
-        </div>
+
+          <div className="mt-12 grid items-center gap-10 lg:mt-14 lg:grid-cols-12 lg:gap-12">
+            <FadeUp delay={0.08} className="lg:col-span-5">
+              <p className="text-sm font-bold text-[#2750F5]">Enterprise</p>
+              <h3 className="mt-4 text-balance text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+                Best suited for complex integration environments
+              </h3>
+              <p className="mt-5 text-lg leading-relaxed text-slate-600">
+                Integrations that support customer-facing workflows. Multiple external systems and vendors involved.
+                Governance and auditability required. Upgrades that introduce operational risk. Integration portfolios
+                that will continue to grow.
+              </p>
+            </FadeUp>
+
+            <FadeUp delay={0.12} className="lg:col-span-7">
+              <div className="overflow-hidden rounded-[1.15rem] border border-slate-200 bg-white shadow-sm">
+                <Image
+                  src="/unifi/ui-example.png"
+                  alt="Unifi integration designer interface example"
+                  width={1234}
+                  height={700}
+                  className="h-auto w-full object-cover object-center"
+                />
+              </div>
+            </FadeUp>
+          </div>
+        </Container>
       </section>
 
-      <section className="border-t border-slate-200 bg-slate-50/60">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Supporting capabilities</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {product.supportingCards.map((c) => (
-              <ContentCard key={c.title} title={c.title} description={c.description} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeSectionFollow />
 
       <CtaBand
         headline={product.cta.headline}
