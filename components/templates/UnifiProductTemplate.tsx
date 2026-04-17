@@ -62,6 +62,74 @@ const CAPABILITY_CARDS = [
   },
 ];
 
+const HOW_IT_WORKS_STEPS = [
+  {
+    id: "01",
+    title: "Endpoint configuration",
+    lines: [
+      "Unifi establishes architectural standards, ownership models, and approval workflows before integrations are deployed.",
+      "No undocumented logic. No hidden dependencies.",
+    ],
+  },
+  {
+    id: "02",
+    title: "Payload transformation",
+    lines: [
+      "Every bond moves through a governed lifecycle with visibility into status, performance, and impact.",
+      "From Dev to Production, nothing moves without structure.",
+    ],
+  },
+  {
+    id: "03",
+    title: "State synchronization",
+    lines: [
+      "Unifi establishes architectural standards, ownership models, and approval workflows before integrations are deployed.",
+      "No undocumented logic. No hidden dependencies.",
+    ],
+  },
+  {
+    id: "04",
+    title: "Error handling and logging",
+    lines: [
+      "Every bond moves through a governed lifecycle with visibility into status, performance, and impact.",
+      "From Dev to Production, nothing moves without structure.",
+    ],
+  },
+];
+
+const SAFETY_CARDS = [
+  {
+    icon: "/unifi/icons/refresh-ccw-04.svg",
+    title: "Regression testing for integration behavior",
+    description: "Validate payload structure, mapping accuracy, and state transitions",
+  },
+  {
+    icon: "/unifi/icons/code-02.svg",
+    title: "API response handling and edge cases",
+    description: "Manage unexpected behaviors and system variations",
+  },
+  {
+    icon: "/unifi/icons/dataflow-03.svg",
+    title: "Data boundaries remain clear as integrations grow",
+    description: "Prevent unintended data exposure across systems",
+  },
+  {
+    icon: "/unifi/icons/arrow-up-right.svg",
+    title: "Explicit data boundaries at the integration level",
+    description: "Define what data is shared, how it transforms, and when",
+  },
+  {
+    icon: "/unifi/icons/building-08.svg",
+    title: "Audit trails for compliance and accountability",
+    description: "Complete message history stored in context",
+  },
+  {
+    icon: "/unifi/icons/shield-tick.svg",
+    title: "Transformations stay inspectable and traceable",
+    description: "Integration logic remains visible inside ServiceNow",
+  },
+];
+
 const MotionLink = motion.create(Link);
 
 type Props = {
@@ -319,7 +387,7 @@ export function UnifiProductTemplate({ product }: Props) {
             <div className="mt-12 grid items-center gap-8 lg:mt-14 lg:grid-cols-12 lg:gap-10">
               <FadeUp delay={0.08} className="lg:col-span-5">
                 <p className="text-sm font-bold text-[#2750F5]">eBonding</p>
-                <h3 className="mt-4 text-balance text-xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+                <h3 className="mt-4 text-balance text-xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
                   Designed for demanding integration patterns
                 </h3>
                 <p className="mt-5 text-lg leading-relaxed text-slate-600">
@@ -360,7 +428,7 @@ export function UnifiProductTemplate({ product }: Props) {
 
       <section className="border-t border-[#F3B93A] bg-[#FDC443] text-slate-900" aria-labelledby="unifi-framework-heading">
         <Container className="relative overflow-hidden py-12 sm:py-14 lg:py-16">
-          <div className="pointer-events-none absolute inset-y-0 right-[-10%] hidden w-[min(60vw,700px)] sm:block" aria-hidden>
+          <div className="pointer-events-none absolute inset-y-0 top-[80%] right-[10%] hidden w-[min(60vw,700px)] sm:block" aria-hidden>
             <Image
               src="/unifi/circles.svg"
               alt=""
@@ -373,11 +441,188 @@ export function UnifiProductTemplate({ product }: Props) {
           <FadeUp className="relative z-[1] max-w-3xl">
             <h2
               id="unifi-framework-heading"
-              className="text-balance text-xl font-semibold tracking-tight sm:text-4xl lg:text-[3rem] lg:leading-[1.08]"
+              className="text-balance text-xl font-semibold tracking-tight sm:text-2xl lg:text-[2rem] lg:leading-[1.08]"
             >
               Unifi is not a connector toolkit. It is an integration framework for long term stability.
             </h2>
           </FadeUp>
+        </Container>
+      </section>
+
+      <section id="unifi-how-it-works" className="border-t border-slate-200 bg-white" aria-labelledby="unifi-how-it-works-heading">
+        <Container className="relative overflow-hidden py-14 sm:py-16 lg:py-20">
+          <div className="relative z-[1] grid gap-10">
+            <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
+              <FadeUp className="lg:col-span-4">
+                <h2 id="unifi-how-it-works-heading" className="text-balance text-3xl font-semibold tracking-tight text-slate-900">
+                  How Unifi Works
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-slate-600">
+                  Unifi does not replace how integrations are built. It introduces a governed control layer that
+                  standardizes how they operate across every ServiceNow environment.
+                </p>
+
+                <div className="mt-8 space-y-4">
+                  {HOW_IT_WORKS_STEPS.slice(0, 2).map((step, index) => (
+                    <article key={step.id} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                      <FadeUp delay={0.08 + index * 0.06}>
+                        <h3 className="text-xl font-semibold tracking-tight text-slate-900">
+                          {step.id} {step.title}
+                        </h3>
+                        <p className="mt-3 text-base leading-relaxed text-slate-600">{step.lines[0]}</p>
+                        <p className="mt-4 font-bold leading-relaxed tracking-tight text-slate-700">{step.lines[1]}</p>
+                      </FadeUp>
+                    </article>
+                  ))}
+                </div>
+              </FadeUp>
+
+              <FadeUp delay={0.08} className="lg:col-span-8">
+                <div className="overflow-hidden rounded-[1.2rem] border border-slate-200 bg-slate-50 shadow-sm">
+                  <Image
+                    src="/unifi/unifi-ui.png"
+                    alt="Unifi dashboard showing monitored integration flow and diagnostics"
+                    width={716}
+                    height={410}
+                    className="h-auto w-full object-cover object-top"
+                  />
+                </div>
+              </FadeUp>
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
+              <FadeUp delay={0.12} className="lg:col-span-8">
+                <div className="overflow-hidden rounded-[1.2rem] border border-slate-200 bg-slate-50 shadow-sm">
+                  <Image
+                    src="/unifi/unifi-ui.png"
+                    alt="Unifi dashboard showing integration runtime details and state updates"
+                    width={716}
+                    height={410}
+                    className="h-auto w-full object-cover object-center"
+                  />
+                </div>
+              </FadeUp>
+
+              <div className="lg:col-span-4">
+                <div className="space-y-4">
+                  {HOW_IT_WORKS_STEPS.slice(2).map((step, index) => (
+                    <article key={step.id} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                      <FadeUp delay={0.14 + index * 0.06}>
+                        <h3 className="text-xl font-semibold tracking-tight text-slate-900">
+                          {step.id} {step.title}
+                        </h3>
+                        <p className="mt-3 text-base leading-relaxed text-slate-600">{step.lines[0]}</p>
+                        <p className="mt-4 font-bold leading-relaxed tracking-tight text-slate-700">{step.lines[1]}</p>
+                      </FadeUp>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <FadeUp delay={0.16}>
+              <MotionLink
+                href="/contact"
+                whileHover={BUTTON_MOTION.whileHover}
+                whileTap={BUTTON_MOTION.whileTap}
+                transition={BUTTON_MOTION.transition}
+                className="inline-flex items-center justify-center rounded-full bg-[#2750F5] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#2148DD]"
+              >
+                Talk with a specialist
+              </MotionLink>
+            </FadeUp>
+          </div>
+        </Container>
+      </section>
+
+      <section
+        id="unifi-governance-clarity"
+        className="border-t border-white/10 text-white"
+        style={{
+          backgroundColor: HERO_BG,
+          backgroundImage:
+            "linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+        aria-labelledby="unifi-governance-clarity-heading"
+      >
+        <Container className="py-14 sm:py-16 lg:py-20">
+          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+            <FadeUp className="lg:col-span-5">
+              <p className="text-xs font-bold uppercase tracking-wide text-white/80">Governance</p>
+              <h2
+                id="unifi-governance-clarity-heading"
+                className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[3rem] lg:leading-[1.08]"
+              >
+                Operational clarity embedded in every record
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-white/90">
+                Most tools provide logs. Unifi provides visibility. For any integrated record, teams see what was sent,
+                what was received, how it was transformed, and where failure occurred without reconciling disconnected
+                systems.
+              </p>
+              <ul className="mt-6 space-y-3 text-xl font-semibold leading-relaxed">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-white" aria-hidden />
+                  <span>What was sent and received</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-white" aria-hidden />
+                  <span>How data was transformed</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2 w-2 rounded-full bg-white" aria-hidden />
+                  <span>Where failures occurred</span>
+                </li>
+              </ul>
+            </FadeUp>
+
+            <FadeUp delay={0.08} className="lg:col-span-7">
+              <div className="relative mx-auto w-full max-w-3xl">
+                <Image
+                  src="/unifi/illustrations/img-platform.png"
+                  alt="Platform illustration representing governed integration visibility"
+                  width={686}
+                  height={617}
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            </FadeUp>
+          </div>
+        </Container>
+      </section>
+
+      <section id="unifi-safety" className="border-t border-slate-200 bg-white" aria-labelledby="unifi-safety-heading">
+        <Container className="py-14 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-4xl text-center">
+            <FadeUp>
+              <p className="text-xs font-bold uppercase tracking-wide text-[#2750F5]">Safety</p>
+            </FadeUp>
+            <FadeUp delay={0.06}>
+              <h2 id="unifi-safety-heading" className="mt-3 text-balance text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+                Safe change and controlled exchange
+              </h2>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <p className="mt-4 text-pretty text-lg leading-relaxed text-slate-600">
+                Upgrades introduce uncertainty. Process change introduces drift.
+              </p>
+            </FadeUp>
+          </div>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
+            {SAFETY_CARDS.map((card, index) => (
+              <FadeUp key={card.title} delay={0.12 + index * 0.05}>
+                <article className="h-full rounded-3xl bg-[#F8FAFF] p-7">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2750F5]">
+                    <Image src={card.icon} alt="" width={22} height={22} className="h-5.5 w-5.5 brightness-0 invert" />
+                  </div>
+                  <h3 className="mt-6 text-balance text-lg font-semibold tracking-tight text-slate-900">{card.title}</h3>
+                  <p className="mt-4 text-lg leading-relaxed text-slate-600">{card.description}</p>
+                </article>
+              </FadeUp>
+            ))}
+          </div>
         </Container>
       </section>
 
