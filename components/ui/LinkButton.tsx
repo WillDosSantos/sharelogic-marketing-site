@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { motion } from "framer-motion";
+import { BUTTON_MOTION } from "@/lib/motion/button";
 import { cn } from "@/lib/utils/cn";
 
 type Props = {
@@ -17,6 +21,8 @@ type Props = {
 };
 
 export function LinkButton({ href, children, variant = "primary", hero = false, className, onClick }: Props) {
+  const MotionLink = motion.create(Link);
+
   const heroSecondary =
     variant === "secondary" &&
     hero &&
@@ -34,9 +40,12 @@ export function LinkButton({ href, children, variant = "primary", hero = false, 
             : "border border-slate-200 bg-white text-slate-900 shadow-sm hover:bg-slate-50";
 
   return (
-    <Link
+    <MotionLink
       href={href}
       onClick={onClick}
+      whileHover={BUTTON_MOTION.whileHover}
+      whileTap={BUTTON_MOTION.whileTap}
+      transition={BUTTON_MOTION.transition}
       className={cn(
         "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold",
         styles,
@@ -44,6 +53,6 @@ export function LinkButton({ href, children, variant = "primary", hero = false, 
       )}
     >
       {children}
-    </Link>
+    </MotionLink>
   );
 }

@@ -1,9 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { SectionIntro } from "@/components/sections/SectionIntro";
 import { Container } from "@/components/layout/Container";
 import { FadeUp } from "@/components/motion/FadeUp";
+import { BUTTON_MOTION } from "@/lib/motion/button";
 import { ContentCard } from "@/components/ui/ContentCard";
 import type { ProductPageContent } from "@/lib/types/content";
 
@@ -63,6 +67,8 @@ type Props = {
 };
 
 export function UnifiProductTemplate({ product }: Props) {
+  const MotionLink = motion.create(Link);
+
   return (
     <>
       <section className="border-b border-white/10 text-white" style={{ backgroundColor: HERO_BG }}>
@@ -83,12 +89,15 @@ export function UnifiProductTemplate({ product }: Props) {
               </h1>
             </FadeUp>
             <FadeUp delay={0.16}>
-              <Link
+              <MotionLink
                 href="/contact"
+                whileHover={BUTTON_MOTION.whileHover}
+                whileTap={BUTTON_MOTION.whileTap}
+                transition={BUTTON_MOTION.transition}
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#2D5BFF] shadow-sm transition-colors hover:bg-white/95"
               >
                 Talk to a specialist
-              </Link>
+              </MotionLink>
             </FadeUp>
           </div>
 

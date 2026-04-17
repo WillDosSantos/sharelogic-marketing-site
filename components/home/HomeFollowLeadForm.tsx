@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { motion } from "framer-motion";
+import { BUTTON_MOTION } from "@/lib/motion/button";
 import { cn } from "@/lib/utils/cn";
 
 type Field = "firstName" | "lastName" | "email" | "company";
@@ -116,12 +118,15 @@ export function HomeFollowLeadForm() {
         />
       </div>
 
-      <button
+      <motion.button
         type="submit"
+        whileHover={BUTTON_MOTION.whileHover}
+        whileTap={BUTTON_MOTION.whileTap}
+        transition={BUTTON_MOTION.transition}
         className="mt-8 w-full rounded-full bg-[#2b59f5] py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#2448d4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2b59f5]"
       >
         Schedule a call with a specialist
-      </button>
+      </motion.button>
 
       {submitted ? (
         <p className="mt-5 text-center text-sm text-slate-600" role="status">

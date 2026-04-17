@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { EasyApiProductTemplate } from "@/components/templates/EasyApiProductTemplate";
 import { ProductTemplate } from "@/components/templates/ProductTemplate";
 import { UnifiProductTemplate } from "@/components/templates/UnifiProductTemplate";
 import { getProductBySlug, products } from "@/lib/data/products";
@@ -25,6 +26,9 @@ export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) notFound();
+  if (product.slug === "easy-api") {
+    return <EasyApiProductTemplate product={product} />;
+  }
   if (product.slug === "unifi") {
     return <UnifiProductTemplate product={product} />;
   }

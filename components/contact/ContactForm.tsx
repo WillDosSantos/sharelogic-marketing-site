@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { motion } from "framer-motion";
+import { BUTTON_MOTION } from "@/lib/motion/button";
 import { cn } from "@/lib/utils/cn";
 
 type Field = "firstName" | "lastName" | "email" | "company" | "message";
@@ -165,12 +167,15 @@ export function ContactForm() {
       </div>
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <button
+        <motion.button
           type="submit"
+          whileHover={BUTTON_MOTION.whileHover}
+          whileTap={BUTTON_MOTION.whileTap}
+          transition={BUTTON_MOTION.transition}
           className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
         >
           Submit inquiry
-        </button>
+        </motion.button>
         <p className="text-xs text-slate-500">
           This form is frontend-only for now—wire it to your CRM or email service when ready.
         </p>

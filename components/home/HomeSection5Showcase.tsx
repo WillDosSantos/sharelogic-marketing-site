@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
+import { BUTTON_MOTION } from "@/lib/motion/button";
 import { cn } from "@/lib/utils/cn";
 
 type Slide = {
@@ -40,6 +41,7 @@ const SLIDES: Slide[] = [
 
 export function HomeSection5Showcase() {
   const [active, setActive] = useState(0);
+  const MotionLink = motion.create(Link);
 
   return (
     <section
@@ -91,12 +93,15 @@ export function HomeSection5Showcase() {
               {SLIDES.map((slide, index) => {
                 const isActive = active === index;
                 return (
-                  <button
+                  <motion.button
                     key={slide.id}
                     type="button"
                     aria-pressed={isActive}
                     aria-label={slide.title}
                     onClick={() => setActive(index)}
+                    whileHover={BUTTON_MOTION.whileHover}
+                    whileTap={BUTTON_MOTION.whileTap}
+                    transition={BUTTON_MOTION.transition}
                     className={cn(
                       "w-full rounded-xl border bg-white p-4 text-left transition-[box-shadow,border-color] duration-200",
                       isActive
@@ -106,17 +111,20 @@ export function HomeSection5Showcase() {
                   >
                     <p className="text-sm font-semibold text-slate-900">{slide.title}</p>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">{slide.body}</p>
-                  </button>
+                  </motion.button>
                 );
               })}
             </div>
 
-            <Link
+            <MotionLink
               href="/products/easy-api"
+              whileHover={BUTTON_MOTION.whileHover}
+              whileTap={BUTTON_MOTION.whileTap}
+              transition={BUTTON_MOTION.transition}
               className="mt-8 inline-flex items-center justify-center rounded-full border border-[#2750F5] bg-white px-5 py-2.5 text-sm font-semibold text-[#2750F5] shadow-sm transition-colors hover:bg-[#2750F5]/5"
             >
               Learn more
-            </Link>
+            </MotionLink>
           </div>
         </div>
       </Container>
