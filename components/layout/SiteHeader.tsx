@@ -61,6 +61,19 @@ export function SiteHeader() {
           <Logo variant="onBrand" />
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
             {mainNavigation.map((group) => {
+              if (!group.children?.length && group.href) {
+                return (
+                  <Link
+                    key={group.id}
+                    href={group.href}
+                    onClick={onNavigateClick}
+                    className="inline-flex items-center rounded-full px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
+                  >
+                    {group.label}
+                  </Link>
+                );
+              }
+
               const menuId = `${baseId}-menu-${group.id}`;
               const btnId = `${baseId}-btn-${group.id}`;
               const open = openGroupId === group.id;
@@ -108,7 +121,7 @@ export function SiteHeader() {
                         onMouseLeave={scheduleClose}
                       >
                         <ul className="max-h-[70vh] overflow-auto py-1">
-                          {group.children.map((child) => {
+                          {group.children?.map((child) => {
                             const active = activeHref === child.href;
                             return (
                               <li key={child.href}>
@@ -141,7 +154,7 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <LinkButton href="/contact" variant="nav" onClick={closeNav}>
-            Get started
+            Talk with a specialist
           </LinkButton>
         </div>
 
@@ -170,6 +183,19 @@ export function SiteHeader() {
             <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
               <div className="space-y-2">
                 {mainNavigation.map((group) => {
+                  if (!group.children?.length && group.href) {
+                    return (
+                      <Link
+                        key={group.id}
+                        href={group.href}
+                        onClick={onNavigateClick}
+                        className="block rounded-full border border-white/20 px-4 py-3 text-sm font-semibold text-white hover:bg-white/10"
+                      >
+                        {group.label}
+                      </Link>
+                    );
+                  }
+
                   const expanded = openGroupId === `m-${group.id}`;
                   return (
                     <div key={group.id} className="rounded-lg border border-white/20 bg-white/5">
@@ -196,7 +222,7 @@ export function SiteHeader() {
                           >
                             <div className="px-2 py-2">
                               <ul className="space-y-1">
-                                {group.children.map((child) => (
+                                {group.children?.map((child) => (
                                   <li key={child.href}>
                                     <Link
                                       href={child.href}
@@ -225,7 +251,7 @@ export function SiteHeader() {
                   News
                 </Link>
                 <LinkButton href="/contact" variant="nav" className="w-full" onClick={closeNav}>
-                  Get started
+                  Talk with a specialist
                 </LinkButton>
               </div>
             </div>

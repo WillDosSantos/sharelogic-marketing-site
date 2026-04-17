@@ -9,7 +9,8 @@ export type NavChild = {
 export type NavGroup = {
   id: string;
   label: string;
-  children: NavChild[];
+  href?: string;
+  children?: NavChild[];
 };
 
 export type ProductPageContent = {

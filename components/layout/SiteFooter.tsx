@@ -31,15 +31,25 @@ export function SiteFooter() {
             {mainNavigation.map((group) => (
               <div key={group.id}>
                 <p className="text-xs font-semibold uppercase tracking-wide text-white/55">{group.label}</p>
-                <ul className="mt-3 space-y-2">
-                  {group.children.map((child) => (
-                    <li key={child.href}>
-                      <Link href={child.href} className="text-sm text-white/90 hover:text-white">
-                        {child.label}
+                {group.children?.length ? (
+                  <ul className="mt-3 space-y-2">
+                    {group.children.map((child) => (
+                      <li key={child.href}>
+                        <Link href={child.href} className="text-sm text-white/90 hover:text-white">
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : group.href ? (
+                  <ul className="mt-3 space-y-2">
+                    <li>
+                      <Link href={group.href} className="text-sm text-white/90 hover:text-white">
+                        {group.label}
                       </Link>
                     </li>
-                  ))}
-                </ul>
+                  </ul>
+                ) : null}
               </div>
             ))}
           </div>

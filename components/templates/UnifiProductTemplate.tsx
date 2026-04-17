@@ -62,13 +62,13 @@ const CAPABILITY_CARDS = [
   },
 ];
 
+const MotionLink = motion.create(Link);
+
 type Props = {
   product: ProductPageContent;
 };
 
 export function UnifiProductTemplate({ product }: Props) {
-  const MotionLink = motion.create(Link);
-
   return (
     <>
       <section className="border-b border-white/10 text-white" style={{ backgroundColor: HERO_BG }}>
@@ -101,7 +101,35 @@ export function UnifiProductTemplate({ product }: Props) {
             </FadeUp>
           </div>
 
-          <div className="relative mt-14 grid items-center gap-10 lg:mt-16 lg:grid-cols-12 lg:gap-6 xl:gap-8">
+          <div className="relative mt-14 lg:mt-16">
+            <div className="pointer-events-none absolute inset-0 z-0 overflow-visible" aria-hidden>
+              <Image
+                src="/unifi/dots.svg"
+                alt=""
+                width={747}
+                height={508}
+                className="absolute left-1/2 top-[38%] h-auto w-[min(118vw,640px)] max-w-none -translate-x-1/2 -translate-y-1/2 sm:top-[40%] sm:w-[min(105vw,720px)] lg:top-[42%] lg:w-[min(92vw,820px)] xl:top-[44%] xl:w-[min(88vw,900px)]"
+              />
+            </div>
+
+            <div className="pointer-events-none absolute inset-0 z-[1] overflow-visible" aria-hidden>
+              <Image
+                src="/unifi/ring.svg"
+                alt=""
+                width={348}
+                height={338}
+                className="absolute -right-6 top-[-4%] h-auto w-[min(52vw,220px)] max-w-none sm:-right-10 sm:top-[-6%] sm:w-[min(48vw,260px)] lg:right-[2%] lg:top-[-8%] lg:w-[min(28vw,300px)] xl:right-[4%] xl:w-[320px]"
+              />
+              <Image
+                src="/unifi/ring.svg"
+                alt=""
+                width={348}
+                height={338}
+                className="absolute -left-10 bottom-[18%] h-auto w-[min(48vw,200px)] max-w-none sm:-left-6 sm:bottom-[14%] sm:w-[min(42vw,240px)] lg:-left-4 lg:bottom-[8%] lg:w-[min(24vw,280px)] xl:-left-2 xl:bottom-[6%] xl:w-[300px]"
+              />
+            </div>
+
+            <div className="relative z-[2] grid items-center gap-10 lg:grid-cols-12 lg:gap-6 xl:gap-8">
             <FadeUp
               delay={0.1}
               className="relative order-2 flex w-full flex-col items-center gap-5 text-center lg:order-none lg:col-span-2 lg:items-start lg:text-left"
@@ -115,13 +143,13 @@ export function UnifiProductTemplate({ product }: Props) {
                   className="absolute left-[80px] top-[-100px] z-10 h-auto max-w-[200px] object-contain"
                 />
               </div>
-              <p className="text-sm font-medium leading-relaxed text-white/90 lg:text-[0.9375rem]">
-                Seamless governance framework for ServiceNow integrations
-              </p>
             </FadeUp>
 
-            <FadeUp delay={0.06} className="order-1 w-full lg:order-none lg:col-span-8">
-              <div className="overflow-hidden">
+            <FadeUp
+              delay={0.06}
+              className="order-1 w-full lg:order-none lg:col-span-8 lg:col-start-3"
+            >
+              <div className="relative z-[2] overflow-hidden">
                 <Image
                   src="/unifi/unifi-ui.png"
                   alt="Unifi product interface showing integration diagnostics and settings"
@@ -131,27 +159,30 @@ export function UnifiProductTemplate({ product }: Props) {
                   priority
                 />
               </div>
+              <ul
+                role="list"
+                className="mt-6 flex w-full flex-col gap-4 sm:mt-7 sm:flex-row sm:flex-wrap sm:items-start sm:justify-center sm:gap-x-5 sm:gap-y-4 lg:mt-8 lg:flex-nowrap lg:gap-x-6 xl:gap-x-8"
+              >
+                {BULLETS.map((item, index) => (
+                  <li key={item.lead} className="min-w-0 sm:flex-1 sm:basis-[min(100%,16rem)] lg:basis-0">
+                    <FadeUp delay={0.12 + index * 0.06} className="flex gap-3 text-left">
+                      <Image
+                        src="/unifi/icon-check.svg"
+                        alt=""
+                        width={24}
+                        height={24}
+                        className="mt-0.5 h-6 w-6 shrink-0"
+                      />
+                      <p className="text-sm leading-relaxed text-white/95">
+                        <span className="font-semibold text-white">{item.lead}</span>
+                        {item.rest}
+                      </p>
+                    </FadeUp>
+                  </li>
+                ))}
+              </ul>
             </FadeUp>
-
-            <ul className="order-3 flex w-full flex-col gap-5 lg:order-none lg:col-span-2">
-              {BULLETS.map((item, index) => (
-                <li key={item.lead}>
-                  <FadeUp delay={0.12 + index * 0.06} className="flex gap-3 text-left">
-                    <Image
-                      src="/unifi/icon-check.svg"
-                      alt=""
-                      width={24}
-                      height={24}
-                      className="mt-0.5 h-6 w-6 shrink-0"
-                    />
-                    <p className="text-sm leading-relaxed text-white/95">
-                      <span className="font-semibold text-white">{item.lead}</span>
-                      {item.rest}
-                    </p>
-                  </FadeUp>
-                </li>
-              ))}
-            </ul>
+            </div>
           </div>
         </Container>
       </section>
@@ -252,6 +283,101 @@ export function UnifiProductTemplate({ product }: Props) {
               </FadeUp>
             ))}
           </div>
+        </Container>
+      </section>
+
+      <section id="unifi-architecture" className="border-t border-slate-200 bg-white" aria-labelledby="unifi-architecture-heading">
+        <div
+          className="border-b border-slate-100"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(15, 23, 42, 0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(15, 23, 42, 0.045) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+          }}
+        >
+          <Container className="py-14 sm:py-16 lg:py-20">
+            <div className="mx-auto max-w-4xl text-center">
+              <FadeUp>
+                <p className="text-xs font-bold uppercase tracking-wide text-[#2750F5]">Architecture</p>
+              </FadeUp>
+              <FadeUp delay={0.06}>
+                <h2
+                  id="unifi-architecture-heading"
+                  className="mt-3 text-balance text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl"
+                >
+                  Built for the hardest pattern
+                </h2>
+              </FadeUp>
+              <FadeUp delay={0.1}>
+                <p className="mt-4 text-pretty text-lg leading-relaxed text-slate-600">
+                  eBonding demands bi-directional state synchronization, cross-organizational SLA alignment, and failure
+                  isolation without systemic drift.
+                </p>
+              </FadeUp>
+            </div>
+
+            <div className="mt-12 grid items-center gap-8 lg:mt-14 lg:grid-cols-12 lg:gap-10">
+              <FadeUp delay={0.08} className="lg:col-span-5">
+                <p className="text-sm font-bold text-[#2750F5]">eBonding</p>
+                <h3 className="mt-4 text-balance text-xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+                  Designed for demanding integration patterns
+                </h3>
+                <p className="mt-5 text-lg leading-relaxed text-slate-600">
+                  When the most demanding pattern is stable, simpler integrations follow naturally. This is operational
+                  reality in enterprise environments.
+                </p>
+              </FadeUp>
+
+              <FadeUp delay={0.12} className="lg:col-span-7">
+                <div className="relative mx-auto w-full max-w-3xl">
+                  <Image
+                    src="/unifi/pattern-section/cubes.svg"
+                    alt=""
+                    width={163}
+                    height={203}
+                    className="pointer-events-none absolute -left-8 -top-10 z-[1] h-auto w-[clamp(110px,20vw,165px)]"
+                  />
+                  <Image
+                    src="/unifi/pattern-section/cube.svg"
+                    alt=""
+                    width={204}
+                    height={262}
+                    className="pointer-events-none absolute -right-8 -bottom-8 z-[1] h-auto w-[clamp(130px,24vw,200px)]"
+                  />
+                  <Image
+                    src="/unifi/pattern-section/UI.svg"
+                    alt="Architecture flow between systems for eBonding"
+                    width={566}
+                    height={349}
+                    className="relative z-[2] h-auto w-full"
+                  />
+                </div>
+              </FadeUp>
+            </div>
+          </Container>
+        </div>
+      </section>
+
+      <section className="border-t border-[#F3B93A] bg-[#FDC443] text-slate-900" aria-labelledby="unifi-framework-heading">
+        <Container className="relative overflow-hidden py-12 sm:py-14 lg:py-16">
+          <div className="pointer-events-none absolute inset-y-0 right-[-10%] hidden w-[min(60vw,700px)] sm:block" aria-hidden>
+            <Image
+              src="/unifi/circles.svg"
+              alt=""
+              width={697}
+              height={697}
+              className="absolute right-0 top-[30%] h-auto w-full -translate-y-1/2"
+            />
+          </div>
+
+          <FadeUp className="relative z-[1] max-w-3xl">
+            <h2
+              id="unifi-framework-heading"
+              className="text-balance text-xl font-semibold tracking-tight sm:text-4xl lg:text-[3rem] lg:leading-[1.08]"
+            >
+              Unifi is not a connector toolkit. It is an integration framework for long term stability.
+            </h2>
+          </FadeUp>
         </Container>
       </section>
 

@@ -97,10 +97,10 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
-
+      <HomeSection6Products />
       <HomeSection4Showcase />
       <HomeSection5Showcase />
-      <HomeSection6Products />
+      
       <TrustedBy />
       <HomeSection7Documentation />
 
