@@ -24,7 +24,7 @@ We’re also growing our partner certification program so implementation quality
 
 **Forward-looking statements:** This post includes plans and intentions that may change.
     `.trim(),
-    featuredImage: "/news/placeholder-1.svg",
+    featuredImage: "/news/feature-img.png",
     publishedAt: "2026-03-02",
     author: { name: "Jordan Ellis", role: "VP Communications" },
     tags: ["Company", "Funding"],
@@ -50,7 +50,7 @@ Execution insights consolidate signals from orchestration runs so teams can answ
 
 We’re rolling this out in phases; contact your account team for availability in your region.
     `.trim(),
-    featuredImage: "/news/placeholder-2.svg",
+    featuredImage: "/news/image-1.png",
     publishedAt: "2026-02-18",
     author: { name: "Priya Nandakumar", role: "Director of Product" },
     tags: ["Platform", "Observability"],
@@ -76,7 +76,7 @@ Instead of governance being a late review gate, ShareLogic lets teams encode req
 
 This is designed to reduce “surprise” deployments while preserving delivery velocity for well-behaved changes.
     `.trim(),
-    featuredImage: "/news/placeholder-3.svg",
+    featuredImage: "/news/Image.jpg",
     publishedAt: "2026-02-04",
     author: { name: "Marcus Chen", role: "Principal Architect" },
     tags: ["Governance", "APIs"],
@@ -100,7 +100,7 @@ We recommend pairing connector rollout with a data stewardship model—connector
 
 Documentation includes migration notes for common upgrade paths.
     `.trim(),
-    featuredImage: "/news/placeholder-4.svg",
+    featuredImage: "/news/image-3.png",
     publishedAt: "2026-01-21",
     author: { name: "Elena Marquez", role: "Head of Integrations" },
     tags: ["Integrations", "ITSM"],
@@ -126,7 +126,7 @@ We’re releasing additional controls for secret rotation, least-privilege defau
 
 If you have questions, contact support or your customer success manager.
     `.trim(),
-    featuredImage: "/news/placeholder-5.svg",
+    featuredImage: "/news/image-4.png",
     publishedAt: "2026-01-07",
     author: { name: "Samira Okonkwo", role: "Chief Information Security Officer" },
     tags: ["Security", "Advisory"],
@@ -150,7 +150,7 @@ If you have questions, contact support or your customer success manager.
 
 Canary cohorts, synthetic checks, and operational dashboards are most valuable when tied to ownership and escalation paths.
     `.trim(),
-    featuredImage: "/news/placeholder-6.svg",
+    featuredImage: "/news/image-5.png",
     publishedAt: "2025-12-16",
     author: { name: "Noah Patel", role: "Engineering Manager" },
     tags: ["Engineering", "Reliability"],
@@ -176,7 +176,7 @@ Clearer implementation standards, repeatable reference architectures, and faster
 
 We’re excited to grow responsibly with partners who value outcomes over slide decks.
     `.trim(),
-    featuredImage: "/news/placeholder-7.svg",
+    featuredImage: "/news/image-6.png",
     publishedAt: "2025-12-02",
     author: { name: "Jordan Ellis", role: "VP Communications" },
     tags: ["Partners", "Company"],
@@ -200,7 +200,7 @@ We’re working through region-specific deployment models, encryption controls, 
 
 This remains a moving area; we’ll publish firmer timelines as contracts and certifications progress.
     `.trim(),
-    featuredImage: "/news/placeholder-8.svg",
+    featuredImage: "/news/image-7.png",
     publishedAt: "2025-11-19",
     author: { name: "Samira Okonkwo", role: "Chief Information Security Officer" },
     tags: ["Security", "Compliance"],
@@ -226,7 +226,7 @@ Reference architectures help teams align quickly, but every estate has constrain
 
 We’ll continue expanding based on customer demand and partner feedback.
     `.trim(),
-    featuredImage: "/news/placeholder-1.svg",
+    featuredImage: "/news/image-8.png",
     publishedAt: "2025-11-05",
     author: { name: "Marcus Chen", role: "Principal Architect" },
     tags: ["Architecture", "Industries"],
@@ -252,7 +252,7 @@ We’ll host architecture reviews, live demos, and office hours for existing cus
 
 Registration details are available on the conference site.
     `.trim(),
-    featuredImage: "/news/placeholder-2.svg",
+    featuredImage: "/news/image-9.png",
     publishedAt: "2025-10-22",
     author: { name: "Jordan Ellis", role: "VP Communications" },
     tags: ["Events", "Company"],
@@ -278,7 +278,7 @@ When docs diverge from reality, integrations fail in subtle ways. We treat docum
 
 If you’ve struggled with drift, we’d love your feedback on what evidence your teams need most.
     `.trim(),
-    featuredImage: "/news/placeholder-3.svg",
+    featuredImage: "/news/feature-img.png",
     publishedAt: "2025-10-08",
     author: { name: "Priya Nandakumar", role: "Director of Product" },
     tags: ["APIs", "Developer experience"],
@@ -302,7 +302,7 @@ We’re prioritizing product investments that reduce manual evidence collection 
 
 Thank you to every participant—your specifics help us build responsibly.
     `.trim(),
-    featuredImage: "/news/placeholder-4.svg",
+    featuredImage: "/news/image-2.png",
     publishedAt: "2025-09-24",
     author: { name: "Elena Marquez", role: "Head of Customer Success" },
     tags: ["Customers", "Governance"],

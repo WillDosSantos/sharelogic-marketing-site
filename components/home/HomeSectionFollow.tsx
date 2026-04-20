@@ -9,8 +9,12 @@ export function HomeSectionFollow() {
       className="section-follow relative overflow-hidden border-t border-slate-200 bg-white"
       aria-labelledby="section-follow-heading"
     >
-      <div className="pointer-events-none absolute inset-0 bg-white" aria-hidden />
-      <div className="pointer-events-none absolute -left-8 top-6 opacity-75 sm:-left-12 sm:opacity-90 lg:left-4 lg:top-16">
+      <div
+        className="pointer-events-none absolute inset-0 bg-repeat opacity-55"
+        aria-hidden
+        style={{ backgroundImage: "url('/square-bg-pattern.png')" }}
+      />
+      <div className="pointer-events-none absolute left-2 top-20 opacity-75 sm:left-6 sm:opacity-90 lg:left-14 lg:top-20">
         <Image
           src="/section-follow/cubset-1.svg"
           alt=""
@@ -19,7 +23,7 @@ export function HomeSectionFollow() {
           className="h-auto w-[min(140px,42vw)] max-w-none sm:w-[min(200px,40vw)]"
         />
       </div>
-      <div className="pointer-events-none absolute -right-6 bottom-6 opacity-75 sm:-right-12 sm:opacity-90 lg:right-2 lg:bottom-20">
+      <div className="pointer-events-none absolute right-2 bottom-14 opacity-75 sm:right-6 sm:opacity-90 lg:right-14 lg:bottom-24">
         <Image
           src="/section-follow/cubeset-2.svg"
           alt=""

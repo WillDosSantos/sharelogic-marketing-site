@@ -1,4 +1,3 @@
-import { Hero } from "@/components/sections/Hero";
 import { NewsHubClient } from "@/components/news/NewsHubClient";
 import { getAllPostsSorted, getFeaturedPost } from "@/lib/data/news";
 import { buildMetadata } from "@/lib/utils/metadata";
@@ -17,10 +16,6 @@ export default function NewsPage() {
 
   return (
     <>
-      <Hero
-        title="News & insights"
-        subtitle="Product announcements, security advisories, and practical notes for teams running integration programs at scale."
-      />
       <NewsHubClient posts={posts} featured={featured} />
     </>
   );

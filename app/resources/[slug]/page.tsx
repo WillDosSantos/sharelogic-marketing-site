@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { CaseStudiesLanding } from "@/components/resources/CaseStudiesLanding";
 import { ResourceCategoryTemplate } from "@/components/templates/ResourceCategoryTemplate";
 import { getResourceCategory, getResourcesByCategory, resourceCategories } from "@/lib/data/resources";
 import { buildMetadata } from "@/lib/utils/metadata";
@@ -28,5 +29,6 @@ export default async function ResourceCategoryPage({ params }: Props) {
   const category = getResourceCategory(slug);
   if (!category) notFound();
   const items = getResourcesByCategory(slug);
+  if (slug === "case-studies") return <CaseStudiesLanding items={items} />;
   return <ResourceCategoryTemplate category={category} items={items} />;
 }
