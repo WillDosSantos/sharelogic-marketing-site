@@ -87,11 +87,11 @@ export default async function NewsPostPage({ params }: Props) {
       <section className="border-t border-slate-200 bg-white">
         <Container className="relative py-12 sm:py-14">
           <Image
-            src="/news/decorative-circle-group-2.svg"
+            src="/news/decorative-circle-group-3.svg"
             alt=""
-            width={160}
-            height={160}
-            className="pointer-events-none absolute -right-3 top-14 hidden md:block"
+            width={600}
+            height={110}
+            className="pointer-events-none absolute -right-3 top-24 hidden h-auto w-[600px] max-w-none md:block"
             unoptimized
           />
           <p className="text-sm font-semibold text-blue-600">See more</p>

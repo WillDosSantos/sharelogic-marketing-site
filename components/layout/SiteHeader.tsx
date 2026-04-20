@@ -16,6 +16,7 @@ const mobilePanelTransition = { duration: 0.28, ease: EASE_IN_OUT as [number, nu
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const isEasyApiPage = pathname === "/products/easy-api";
   const baseId = useId();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openGroupId, setOpenGroupId] = useState<string | null>(null);
@@ -55,10 +56,15 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/15 bg-[#2750F5]">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b",
+        isEasyApiPage ? "border-white/10 bg-[#152134]" : "border-white/15 bg-[#2750F5]",
+      )}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6">
-          <Logo variant="onBrand" />
+          <Logo variant={isEasyApiPage ? "onDark" : "onBrand"} />
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
             {mainNavigation.map((group) => {
               if (!group.children?.length && group.href) {
@@ -153,9 +159,19 @@ export function SiteHeader() {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <LinkButton href="/contact" variant="nav" onClick={closeNav}>
-            Talk with a specialist
-          </LinkButton>
+          {isEasyApiPage ? (
+            <Link
+              href="/contact"
+              onClick={closeNav}
+              className="inline-flex items-center justify-center rounded-full border border-white/80 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Get Started
+            </Link>
+          ) : (
+            <LinkButton href="/contact" variant="nav" onClick={closeNav}>
+              Talk with a specialist
+            </LinkButton>
+          )}
         </div>
 
         <button
@@ -178,7 +194,7 @@ export function SiteHeader() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={mobilePanelTransition}
-            className="overflow-hidden border-t border-white/15 bg-[#2750F5] lg:hidden"
+            className={cn("overflow-hidden border-t border-white/10 lg:hidden", isEasyApiPage ? "bg-[#152134]" : "bg-[#2750F5]")}
           >
             <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
               <div className="space-y-2">
@@ -218,7 +234,10 @@ export function SiteHeader() {
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={dropdownTransition}
-                            className="border-t border-white/15 bg-[#2750F5]"
+                            className={cn(
+                              "border-t border-white/10",
+                              isEasyApiPage ? "bg-[#152134]" : "bg-[#2750F5]",
+                            )}
                           >
                             <div className="px-2 py-2">
                               <ul className="space-y-1">
@@ -250,9 +269,19 @@ export function SiteHeader() {
                 >
                   News
                 </Link>
-                <LinkButton href="/contact" variant="nav" className="w-full" onClick={closeNav}>
-                  Talk with a specialist
-                </LinkButton>
+                {isEasyApiPage ? (
+                  <Link
+                    href="/contact"
+                    onClick={onNavigateClick}
+                    className="block w-full rounded-full border border-white/80 bg-transparent py-2.5 text-center text-sm font-semibold text-white hover:bg-white/10"
+                  >
+                    Get Started
+                  </Link>
+                ) : (
+                  <LinkButton href="/contact" variant="nav" className="w-full" onClick={closeNav}>
+                    Talk with a specialist
+                  </LinkButton>
+                )}
               </div>
             </div>
           </motion.div>

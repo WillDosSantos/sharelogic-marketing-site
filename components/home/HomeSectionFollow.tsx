@@ -12,9 +12,12 @@ export function HomeSectionFollow() {
       <div
         className="pointer-events-none absolute inset-0 bg-repeat opacity-55"
         aria-hidden
-        style={{ backgroundImage: "url('/square-bg-pattern.png')" }}
+        style={{
+          backgroundImage: "url('/square-bg-pattern.png')",
+          backgroundSize: "36px 36px",
+        }}
       />
-      <div className="pointer-events-none absolute left-2 top-20 opacity-75 sm:left-6 sm:opacity-90 lg:left-14 lg:top-20">
+      <div className="pointer-events-none absolute left-2 top-12 opacity-75 sm:left-6 sm:opacity-90 lg:left-14 lg:top-14">
         <Image
           src="/section-follow/cubset-1.svg"
           alt=""
@@ -23,7 +26,7 @@ export function HomeSectionFollow() {
           className="h-auto w-[min(140px,42vw)] max-w-none sm:w-[min(200px,40vw)]"
         />
       </div>
-      <div className="pointer-events-none absolute right-2 bottom-14 opacity-75 sm:right-6 sm:opacity-90 lg:right-14 lg:bottom-24">
+      <div className="pointer-events-none absolute right-2 bottom-10 opacity-75 sm:right-6 sm:opacity-90 lg:right-14 lg:bottom-16">
         <Image
           src="/section-follow/cubeset-2.svg"
           alt=""
@@ -33,7 +36,7 @@ export function HomeSectionFollow() {
         />
       </div>
 
-      <Container className="relative z-10 py-14 sm:py-16 lg:py-20">
+      <Container className="relative z-10 py-8 sm:py-10 lg:py-12">
         <div className="mx-auto max-w-2xl text-center">
           <h2 id="section-follow-heading" className="text-2xl font-semibold tracking-tight text-black sm:text-3xl">
             Let&apos;s talk about your integrations
@@ -43,7 +46,7 @@ export function HomeSectionFollow() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-lg">
+        <div className="mx-auto mt-6 max-w-lg sm:mt-8">
           <HomeFollowLeadForm />
         </div>
       </Container>

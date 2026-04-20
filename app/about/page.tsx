@@ -1,9 +1,7 @@
-import { CtaBand } from "@/components/sections/CtaBand";
-import { FadeUp } from "@/components/motion/FadeUp";
+import Image from "next/image";
+import Link from "next/link";
+import { HomeSectionFollow } from "@/components/home/HomeSectionFollow";
 import { Container } from "@/components/layout/Container";
-import { Hero } from "@/components/sections/Hero";
-import { SectionIntro } from "@/components/sections/SectionIntro";
-import { ContentCard } from "@/components/ui/ContentCard";
 import { buildMetadata } from "@/lib/utils/metadata";
 
 export const metadata = buildMetadata({
@@ -16,83 +14,244 @@ export const metadata = buildMetadata({
 export default function AboutPage() {
   return (
     <>
-      <Hero
-        title="Built for enterprises that can’t afford fragile integrations"
-        subtitle="ShareLogic exists to help organizations connect systems responsibly: with clear ownership, measurable reliability, and controls that satisfy security and compliance stakeholders."
-      />
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[#1F53FF]">
+        <div
+          className="pointer-events-none absolute left-0 top-0 hidden h-full w-[26%] bg-contain bg-left-top bg-no-repeat md:block"
+          aria-hidden
+          style={{ backgroundImage: "url('/about/dot-grid-left.png')" }}
+        />
+        <div
+          className="pointer-events-none absolute right-0 top-0 hidden h-full w-[26%] bg-contain bg-right-top bg-no-repeat md:block"
+          aria-hidden
+          style={{ backgroundImage: "url('/about/dot-grid-right.png')" }}
+        />
 
-      <SectionIntro
-        title="Our story"
-        description="ShareLogic started where most integration programs break: not at the connector catalog, but at the operating model. We focus on governance, visibility, and scalable patterns so modernization doesn’t trade speed for trust."
-      />
+        <div className="pointer-events-none absolute left-[8%] top-[22%] hidden md:block" aria-hidden>
+          <Image src="/about/blocks-left.png" alt="" width={96} height={96} unoptimized />
+        </div>
+        <div className="pointer-events-none absolute right-[8%] top-[18%] hidden md:block" aria-hidden>
+          <Image src="/about/blocks-right.png" alt="" width={124} height={124} unoptimized />
+        </div>
 
-      <section className="border-t border-slate-200 bg-slate-50/60">
-        <Container className="py-12 sm:py-14">
-          <FadeUp>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Mission</h2>
-            <p className="mt-4 max-w-3xl text-pretty text-base leading-relaxed text-slate-600">
-              Make enterprise integration operable: predictable change, accountable ownership, and evidence that stands up to audits—without forcing teams back to spreadsheets and heroics.
-            </p>
-          </FadeUp>
+        <Container className="relative z-10 py-16 sm:py-20 lg:py-24">
+          <div className="grid items-center gap-10 lg:grid-cols-12">
+            <div className="text-center text-white lg:col-span-3 lg:text-left">
+              <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Simplifying</h1>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-2xl lg:col-span-6">
+              <Image
+                src="/about/hero-image-main.png"
+                alt="ShareLogic integration platform illustration"
+                width={860}
+                height={520}
+                className="h-auto w-full"
+                priority
+                unoptimized
+              />
+            </div>
+
+            <div className="text-center text-white lg:col-span-3 lg:text-right">
+              <p className="text-4xl font-semibold tracking-tight sm:text-5xl">Complexity</p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[#1F53FF]">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-30"
+          aria-hidden
+          style={{ backgroundImage: "url('/about/bg-pattern.png')" }}
+        />
+        <Container className="relative z-10 py-8 sm:py-10 lg:py-12">
+          <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
+            <div className="lg:col-span-5">
+              <h2 className="max-w-xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
+                ShareLogic, the journey to creating the globally recognised ebonding integration platform
+              </h2>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-blue-100 sm:text-lg">
+                ShareLogic Unifi was developed to excel at one thing: ebonding within ServiceNow. Our platform transforms the
+                capabilities of companies to create and manage powerful, sophisticated, and flexible integrations, quickly and
+                at scale.
+              </p>
+            </div>
+            <div className="relative mx-auto flex w-full max-w-2xl justify-center lg:col-span-7">
+              <Image
+                src="/about/img-platform.png"
+                alt="ShareLogic integration platform illustration"
+                width={900}
+                height={640}
+                className="h-auto w-full max-h-[min(280px,42vh)] object-contain sm:max-h-[min(320px,45vh)] lg:max-h-[min(360px,48vh)]"
+                unoptimized
+              />
+            </div>
+          </div>
         </Container>
       </section>
 
       <section className="border-t border-slate-200 bg-white">
-        <Container className="py-12 sm:py-14">
-          <FadeUp>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Leadership (placeholder)</h2>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600">
-              Executive bios and photography typically live here. This starter uses neutral placeholders so design can slot in final assets without restructuring routes.
-            </p>
-          </FadeUp>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {["CEO", "CTO", "CPO"].map((role, index) => (
-              <FadeUp key={role} delay={index * 0.06}>
-                <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-6">
-                  <div className="h-12 w-12 rounded-full border border-slate-200 bg-white" aria-hidden />
-                  <p className="mt-4 text-sm font-semibold text-slate-900">Name placeholder</p>
-                  <p className="mt-1 text-sm text-slate-600">{role}</p>
+        <Container className="py-14 sm:py-16 lg:py-20">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-6">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Our Founders Story</h2>
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
+                ShareLogic was founded by two industry veterans who saw a gap in the market for a platform that could simplify
+                the complex world of enterprise integrations. With decades of combined experience, they set out to build a
+                solution that would empower businesses to connect their systems seamlessly and efficiently.
+              </p>
+            </div>
+            <div className="flex justify-center lg:col-span-6 lg:justify-end">
+              <Image
+                src="/about/founder-circles.svg"
+                alt=""
+                width={420}
+                height={420}
+                className="h-auto w-full max-w-sm"
+                unoptimized
+              />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-slate-200 bg-white">
+        <Container className="py-14 sm:py-16 lg:py-20">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-5">
+              <div className="overflow-hidden rounded-tl-3xl rounded-br-3xl border border-slate-200 bg-slate-100 shadow-sm">
+                <div className="relative aspect-[4/5]">
+                  <Image
+                    src="/about/founder-image.png"
+                    alt="ShareLogic founder"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                    unoptimized
+                  />
                 </div>
-              </FadeUp>
-            ))}
+                <div className="h-2 bg-[#1F53FF]" aria-hidden />
+              </div>
+            </div>
+            <div className="lg:col-span-7">
+              <p className="text-lg leading-relaxed text-slate-600">
+                James Neale and Mark Cripps have worked together for over 20 years, building enterprise software solutions for
+                some of the world&apos;s largest organisations. Their journey began with a shared vision: to create technology
+                that truly serves business needs, not the other way around.
+              </p>
+              <p className="mt-6 text-lg leading-relaxed text-slate-600">
+                After years of witnessing the challenges companies face when trying to integrate disparate systems, they
+                recognised the need for a more intuitive, powerful solution. This realisation sparked the creation of
+                ShareLogic—a platform designed to bridge the gap between complex technical requirements and business
+                objectives.
+              </p>
+            </div>
           </div>
         </Container>
       </section>
 
-      <section className="border-t border-slate-200 bg-slate-50/60">
-        <Container className="py-12 sm:py-14">
-          <FadeUp>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Values</h2>
-          </FadeUp>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <FadeUp delay={0.05}>
-              <ContentCard
-                title="Integrity in operations"
-                description="We optimize for what’s true in production—not demo-day polish that falls apart under scrutiny."
-              />
-            </FadeUp>
-            <FadeUp delay={0.1}>
-              <ContentCard
-                title="Clarity over complexity"
-                description="Enterprise software should reduce ambiguity. We prefer explicit workflows and measurable outcomes."
-              />
-            </FadeUp>
-            <FadeUp delay={0.15}>
-              <ContentCard
-                title="Partnership with practitioners"
-                description="We build with the people who carry pagers: operators, architects, and security partners."
-              />
-            </FadeUp>
+      <section className="border-t border-slate-200 bg-[#EEF2FF]">
+        <Container className="py-16 sm:py-20">
+          <blockquote className="mx-auto max-w-3xl text-center">
+            <p className="text-2xl font-medium leading-relaxed text-[#2750F5] sm:text-3xl">
+              &ldquo;A very nice quote that goes here from one of the founders.&rdquo;
+            </p>
+            <footer className="mt-6 text-lg font-semibold text-[#1F53FF]">James Neale</footer>
+          </blockquote>
+        </Container>
+      </section>
+
+      <section className="border-t border-slate-200 bg-white">
+        <Container className="py-14 sm:py-16 lg:py-20">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-7">
+              <p className="text-lg leading-relaxed text-slate-600">
+                Throughout their careers, James and Mark encountered countless scenarios where businesses struggled with
+                outdated, cumbersome integration processes. They saw firsthand how these inefficiencies hindered growth,
+                innovation, and customer satisfaction.
+              </p>
+              <p className="mt-6 text-lg leading-relaxed text-slate-600">
+                Determined to make a difference, they leveraged their extensive industry knowledge and technical expertise to
+                develop ShareLogic. Their goal was simple yet ambitious: to provide a platform that not only meets the
+                technical demands of modern enterprises but also aligns seamlessly with their strategic goals.
+              </p>
+              <p className="mt-6 text-lg leading-relaxed text-slate-600">
+                Today, ShareLogic stands as a testament to their dedication and vision, helping businesses worldwide achieve
+                smoother, more effective integrations. James and Mark continue to lead the company with the same passion and
+                commitment that inspired its inception, driving forward the future of enterprise connectivity.
+              </p>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="overflow-hidden rounded-tl-3xl rounded-br-3xl border border-slate-200 bg-slate-100 shadow-sm">
+                <div className="relative aspect-[4/5]">
+                  <Image
+                    src="/about/about-2.png"
+                    alt="Modern city skyline"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                    unoptimized
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
-      <CtaBand
-        headline="Want to explore ShareLogic with your team?"
-        body="We’ll align on your constraints, priorities, and success metrics—then propose a pragmatic adoption path."
-        primaryLabel="Contact us"
-        primaryHref="/contact"
-      />
+      <section className="border-t border-slate-200 bg-[#1F53FF]">
+        <Container className="py-16 sm:py-20 lg:py-24">
+          <p className="mx-auto max-w-4xl text-center text-lg leading-relaxed text-white sm:text-xl">
+            As the drive to digitalisation continues to generate exponential growth in outsourced supplier operating models and
+            connected systems, effective integration at scale, operational insight and automated testing are becoming even more
+            mission critical. For customers demanding flexibility, ease of use, security and governance, ShareLogic Unifi has
+            continued to deliver the optimal solution defining the difference between OK and excellent!
+          </p>
+        </Container>
+      </section>
+
+      <section className="relative overflow-hidden border-t border-slate-200 bg-white">
+        <div
+          className="pointer-events-none absolute -right-8 top-0 hidden h-64 w-64 opacity-40 md:block"
+          aria-hidden
+          style={{ backgroundImage: "url('/about/dot-grid-right.png')", backgroundSize: "contain", backgroundPosition: "top right", backgroundRepeat: "no-repeat" }}
+        />
+        <Container className="relative z-10 py-14 sm:py-16 lg:py-20">
+          <div className="grid items-center gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-6">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Want to join our team?</h2>
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-700">
+                Joining ShareLogic is an exciting chance to be part of an innovative team. Here, collaboration is essential, and
+                every member contributes to our future. We embrace new ideas and technologies that propel our mission. At
+                ShareLogic, we value creativity, encourage growth, and foster belonging. We&apos;re not just creating software;
+                we&apos;re building a thriving community.
+              </p>
+              <Link
+                href="/careers"
+                className="mt-8 inline-flex items-center justify-center rounded-xl bg-[#2750F5] px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-[#1f40c4]"
+              >
+                View the open roles
+              </Link>
+            </div>
+            <div className="lg:col-span-6">
+              <div className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-sm">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src="/about/about-3.png"
+                    alt="ShareLogic team collaborating"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    unoptimized
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <HomeSectionFollow />
     </>
   );
 }
