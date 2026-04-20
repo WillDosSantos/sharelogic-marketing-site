@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HomeSectionFollow } from "@/components/home/HomeSectionFollow";
 import { Container } from "@/components/layout/Container";
+import { FadeUp } from "@/components/motion/FadeUp";
 import { buildMetadata } from "@/lib/utils/metadata";
 
 export const metadata = buildMetadata({
@@ -35,11 +36,11 @@ export default function AboutPage() {
 
         <Container className="relative z-10 py-16 sm:py-20 lg:py-24">
           <div className="grid items-center gap-10 lg:grid-cols-12">
-            <div className="text-center text-white lg:col-span-3 lg:text-left">
+            <FadeUp className="text-center text-white lg:col-span-3 lg:text-left">
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Simplifying</h1>
-            </div>
+            </FadeUp>
 
-            <div className="relative mx-auto w-full max-w-2xl lg:col-span-6">
+            <FadeUp delay={0.08} className="relative mx-auto w-full max-w-2xl lg:col-span-6">
               <Image
                 src="/about/hero-image-main.png"
                 alt="ShareLogic integration platform illustration"
@@ -49,11 +50,11 @@ export default function AboutPage() {
                 priority
                 unoptimized
               />
-            </div>
+            </FadeUp>
 
-            <div className="text-center text-white lg:col-span-3 lg:text-right">
+            <FadeUp delay={0.12} className="text-center text-white lg:col-span-3 lg:text-right">
               <p className="text-4xl font-semibold tracking-tight sm:text-5xl">Complexity</p>
-            </div>
+            </FadeUp>
           </div>
         </Container>
       </section>
@@ -66,7 +67,7 @@ export default function AboutPage() {
         />
         <Container className="relative z-10 py-8 sm:py-10 lg:py-12">
           <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
-            <div className="lg:col-span-5">
+            <FadeUp className="lg:col-span-5">
               <h2 className="max-w-xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
                 ShareLogic, the journey to creating the globally recognised ebonding integration platform
               </h2>
@@ -75,8 +76,8 @@ export default function AboutPage() {
                 capabilities of companies to create and manage powerful, sophisticated, and flexible integrations, quickly and
                 at scale.
               </p>
-            </div>
-            <div className="relative mx-auto flex w-full max-w-2xl justify-center lg:col-span-7">
+            </FadeUp>
+            <FadeUp delay={0.08} className="relative mx-auto flex w-full max-w-2xl justify-center lg:col-span-7">
               <Image
                 src="/about/img-platform.png"
                 alt="ShareLogic integration platform illustration"
@@ -85,7 +86,7 @@ export default function AboutPage() {
                 className="h-auto w-full max-h-[min(280px,42vh)] object-contain sm:max-h-[min(320px,45vh)] lg:max-h-[min(360px,48vh)]"
                 unoptimized
               />
-            </div>
+            </FadeUp>
           </div>
         </Container>
       </section>
@@ -93,15 +94,15 @@ export default function AboutPage() {
       <section className="border-t border-slate-200 bg-white">
         <Container className="py-14 sm:py-16 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
-            <div className="lg:col-span-6">
+            <FadeUp className="lg:col-span-6">
               <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Our Founders Story</h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
                 ShareLogic was founded by two industry veterans who saw a gap in the market for a platform that could simplify
                 the complex world of enterprise integrations. With decades of combined experience, they set out to build a
                 solution that would empower businesses to connect their systems seamlessly and efficiently.
               </p>
-            </div>
-            <div className="flex justify-center lg:col-span-6 lg:justify-end">
+            </FadeUp>
+            <FadeUp delay={0.08} className="flex justify-center lg:col-span-6 lg:justify-end">
               <Image
                 src="/about/founder-circles.svg"
                 alt=""
@@ -110,7 +111,7 @@ export default function AboutPage() {
                 className="h-auto w-full max-w-sm"
                 unoptimized
               />
-            </div>
+            </FadeUp>
           </div>
         </Container>
       </section>
@@ -118,7 +119,7 @@ export default function AboutPage() {
       <section className="border-t border-slate-200 bg-white">
         <Container className="py-14 sm:py-16 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-5">
+            <FadeUp className="lg:col-span-5">
               <div className="overflow-hidden rounded-tl-3xl rounded-br-3xl border border-slate-200 bg-slate-100 shadow-sm">
                 <div className="relative aspect-[4/5]">
                   <Image
@@ -132,8 +133,8 @@ export default function AboutPage() {
                 </div>
                 <div className="h-2 bg-[#1F53FF]" aria-hidden />
               </div>
-            </div>
-            <div className="lg:col-span-7">
+            </FadeUp>
+            <FadeUp delay={0.08} className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-slate-600">
                 James Neale and Mark Cripps have worked together for over 20 years, building enterprise software solutions for
                 some of the world&apos;s largest organisations. Their journey began with a shared vision: to create technology
@@ -145,26 +146,28 @@ export default function AboutPage() {
                 ShareLogic—a platform designed to bridge the gap between complex technical requirements and business
                 objectives.
               </p>
-            </div>
+            </FadeUp>
           </div>
         </Container>
       </section>
 
       <section className="border-t border-slate-200 bg-[#EEF2FF]">
         <Container className="py-16 sm:py-20">
-          <blockquote className="mx-auto max-w-3xl text-center">
+          <FadeUp>
+            <blockquote className="mx-auto max-w-3xl text-center">
             <p className="text-2xl font-medium leading-relaxed text-[#2750F5] sm:text-3xl">
               &ldquo;A very nice quote that goes here from one of the founders.&rdquo;
             </p>
             <footer className="mt-6 text-lg font-semibold text-[#1F53FF]">James Neale</footer>
-          </blockquote>
+            </blockquote>
+          </FadeUp>
         </Container>
       </section>
 
       <section className="border-t border-slate-200 bg-white">
         <Container className="py-14 sm:py-16 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-7">
+            <FadeUp className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-slate-600">
                 Throughout their careers, James and Mark encountered countless scenarios where businesses struggled with
                 outdated, cumbersome integration processes. They saw firsthand how these inefficiencies hindered growth,
@@ -180,8 +183,8 @@ export default function AboutPage() {
                 smoother, more effective integrations. James and Mark continue to lead the company with the same passion and
                 commitment that inspired its inception, driving forward the future of enterprise connectivity.
               </p>
-            </div>
-            <div className="lg:col-span-5">
+            </FadeUp>
+            <FadeUp delay={0.08} className="lg:col-span-5">
               <div className="overflow-hidden rounded-tl-3xl rounded-br-3xl border border-slate-200 bg-slate-100 shadow-sm">
                 <div className="relative aspect-[4/5]">
                   <Image
@@ -194,19 +197,21 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
-            </div>
+            </FadeUp>
           </div>
         </Container>
       </section>
 
       <section className="border-t border-slate-200 bg-[#1F53FF]">
         <Container className="py-16 sm:py-20 lg:py-24">
-          <p className="mx-auto max-w-4xl text-center text-lg leading-relaxed text-white sm:text-xl">
-            As the drive to digitalisation continues to generate exponential growth in outsourced supplier operating models and
-            connected systems, effective integration at scale, operational insight and automated testing are becoming even more
-            mission critical. For customers demanding flexibility, ease of use, security and governance, ShareLogic Unifi has
-            continued to deliver the optimal solution defining the difference between OK and excellent!
-          </p>
+          <FadeUp>
+            <p className="mx-auto max-w-4xl text-center text-lg leading-relaxed text-white sm:text-xl">
+              As the drive to digitalisation continues to generate exponential growth in outsourced supplier operating models and
+              connected systems, effective integration at scale, operational insight and automated testing are becoming even more
+              mission critical. For customers demanding flexibility, ease of use, security and governance, ShareLogic Unifi has
+              continued to deliver the optimal solution defining the difference between OK and excellent!
+            </p>
+          </FadeUp>
         </Container>
       </section>
 
@@ -218,7 +223,7 @@ export default function AboutPage() {
         />
         <Container className="relative z-10 py-14 sm:py-16 lg:py-20">
           <div className="grid items-center gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-6">
+            <FadeUp className="lg:col-span-6">
               <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Want to join our team?</h2>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-700">
                 Joining ShareLogic is an exciting chance to be part of an innovative team. Here, collaboration is essential, and
@@ -232,8 +237,8 @@ export default function AboutPage() {
               >
                 View the open roles
               </Link>
-            </div>
-            <div className="lg:col-span-6">
+            </FadeUp>
+            <FadeUp delay={0.08} className="lg:col-span-6">
               <div className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-sm">
                 <div className="relative aspect-[4/3]">
                   <Image
@@ -246,7 +251,7 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
-            </div>
+            </FadeUp>
           </div>
         </Container>
       </section>
