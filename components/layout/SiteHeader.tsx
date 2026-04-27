@@ -3,6 +3,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/layout/Logo";
@@ -136,14 +137,26 @@ export function SiteHeader() {
                                   href={child.href}
                                   onClick={onNavigateClick}
                                   className={cn(
-                                    "block rounded-lg px-3 py-2 text-sm hover:bg-slate-50",
+                                    "flex items-center gap-3 rounded-lg px-3 py-2 text-sm hover:bg-slate-50",
                                     active && "bg-slate-50",
                                   )}
                                 >
-                                  <span className="font-medium text-slate-900">{child.label}</span>
-                                  {child.description ? (
-                                    <span className="mt-1 block text-xs text-slate-600">{child.description}</span>
+                                  {child.icon ? (
+                                    <Image
+                                      src={child.icon}
+                                      alt=""
+                                      width={24}
+                                      height={24}
+                                      aria-hidden
+                                      className="h-7 w-7 shrink-0"
+                                    />
                                   ) : null}
+                                  <span className="min-w-0">
+                                    <span className="font-medium text-slate-900">{child.label}</span>
+                                    {child.description ? (
+                                      <span className="mt-1 block text-xs text-slate-600">{child.description}</span>
+                                    ) : null}
+                                  </span>
                                 </Link>
                               </li>
                             );
@@ -246,9 +259,19 @@ export function SiteHeader() {
                                     <Link
                                       href={child.href}
                                       onClick={onNavigateClick}
-                                      className="block rounded-full px-3 py-2 text-sm text-white hover:bg-white/10"
+                                      className="flex items-center gap-3 rounded-full px-3 py-2 text-sm text-white hover:bg-white/10"
                                     >
-                                      {child.label}
+                                      {child.icon ? (
+                                        <Image
+                                          src={child.icon}
+                                          alt=""
+                                          width={24}
+                                          height={24}
+                                          aria-hidden
+                                          className="h-7 w-7 shrink-0"
+                                        />
+                                      ) : null}
+                                      <span>{child.label}</span>
                                     </Link>
                                   </li>
                                 ))}

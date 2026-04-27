@@ -23,19 +23,19 @@ const SLIDES: Slide[] = [
     id: "easy-api-1",
     title: "Outbound conditions & criteria",
     body: SHARED_BODY,
-    imageSrc: "/section-5/section-5-ui-image.svg",
+    imageSrc: "/home/easy-api-image-1.png",
   },
   {
     id: "easy-api-2",
     title: "Policy-aware publishing",
     body: SHARED_BODY,
-    imageSrc: "/section-5/section-5-ui-image-2.svg",
+    imageSrc: "/home/easy-api-img-2.png",
   },
   {
     id: "easy-api-3",
     title: "Contracts operators can trust",
     body: SHARED_BODY,
-    imageSrc: "/section-5/section-5-ui-image-3.svg",
+    imageSrc: "/home/easy-api-img-3.png",
   },
 ];
 
@@ -51,7 +51,7 @@ export function HomeSection5Showcase() {
     >
       <Container className="py-12 sm:py-14 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-14 xl:gap-20">
-          <div className="relative flex min-h-[280px] items-center justify-center sm:min-h-[360px]">
+          <div className="relative flex min-h-[280px] items-start justify-center pt-12 pb-8 sm:min-h-[360px] sm:pt-14 sm:pb-10 lg:pt-16 lg:pb-10">
             <div className="relative aspect-[850/869] w-full max-w-xl">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -103,7 +103,7 @@ export function HomeSection5Showcase() {
                     whileTap={BUTTON_MOTION.whileTap}
                     transition={BUTTON_MOTION.transition}
                     className={cn(
-                      "w-full rounded-xl border bg-white p-4 text-left transition-[box-shadow,border-color] duration-200",
+                      "w-full rounded-xl border bg-white p-4 text-left ring-0 transition-[box-shadow,border-color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2750F5]/30",
                       isActive
                         ? "border-[#2750F5] shadow-[0_0_0_1px_#2750F5,0_12px_32px_-8px_rgba(39,80,245,0.28)]"
                         : "border-slate-200 shadow-sm hover:border-slate-300",

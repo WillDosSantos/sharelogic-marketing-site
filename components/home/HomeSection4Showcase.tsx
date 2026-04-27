@@ -21,21 +21,21 @@ const SLIDES: Slide[] = [
     title: "A unified platform story",
     body:
       "Unifi streamlines governance with clear integration standards, clarifying permissions and execution. It establishes ownership and offers a framework for evaluating changes—so teams collaborate while shipping quickly.",
-    imageSrc: "/section-4/section-3-ui-image-1.svg",
+    imageSrc: "/home/unifi-img-1.png",
   },
   {
     id: "easy-api",
     title: "Easy API alongside Unifi",
     body:
       "Expose governed endpoints with consistent contracts and lifecycle controls. Pair Unifi’s orchestration with Easy API so consumers get predictable behavior and operators get signals they can trust.",
-    imageSrc: "/section-4/section-3-ui-image-2.svg",
+    imageSrc: "/home/unifi-img-2.png",
   },
   {
     id: "buyers",
     title: "Clarity for informed buyers",
     body:
       "Give procurement and engineering a shared vocabulary: what’s integrated, who owns it, and what changes mean for risk. That alignment shortens reviews and reduces last-minute surprises.",
-    imageSrc: "/section-4/section-3-ui-image-3.svg",
+    imageSrc: "/home/unifi-img-3.png",
   },
 ];
 
@@ -76,7 +76,7 @@ export function HomeSection4Showcase() {
                     whileTap={BUTTON_MOTION.whileTap}
                     transition={BUTTON_MOTION.transition}
                     className={cn(
-                      "w-full rounded-xl border bg-white p-4 text-left transition-[box-shadow,border-color] duration-200",
+                      "w-full rounded-xl border bg-white p-4 text-left ring-0 transition-[box-shadow,border-color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2750F5]/30",
                       isActive
                         ? "border-[#2750F5] shadow-[0_0_0_1px_#2750F5,0_12px_32px_-8px_rgba(39,80,245,0.28)]"
                         : "border-slate-200 shadow-sm hover:border-slate-300",
@@ -100,11 +100,11 @@ export function HomeSection4Showcase() {
             </MotionLink>
           </div>
 
-          <div className="relative flex min-h-[280px] items-center justify-center rounded-[2rem] px-6 py-10 sm:min-h-[360px] lg:px-8 lg:py-12">
+          <div className="relative flex min-h-[280px] items-start justify-center rounded-[2rem] px-6 pt-12 pb-8 sm:min-h-[360px] sm:pt-14 sm:pb-10 lg:px-8 lg:pt-16 lg:pb-10">
             <div className="relative aspect-[939/952] w-full max-w-lg">
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={SLIDES[active].id}
+                  key={SLIDES[active].imageSrc}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}

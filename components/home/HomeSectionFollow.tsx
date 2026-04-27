@@ -17,7 +17,7 @@ export function HomeSectionFollow() {
           backgroundSize: "36px 36px",
         }}
       />
-      <div className="pointer-events-none absolute left-2 top-12 opacity-75 sm:left-6 sm:opacity-90 lg:left-14 lg:top-14">
+      <div className="pointer-events-none absolute left-4 top-16 opacity-75 sm:left-8 sm:top-14 sm:opacity-90 lg:left-16 lg:top-12">
         <Image
           src="/section-follow/cubset-1.svg"
           alt=""
@@ -26,7 +26,7 @@ export function HomeSectionFollow() {
           className="h-auto w-[min(140px,42vw)] max-w-none sm:w-[min(200px,40vw)]"
         />
       </div>
-      <div className="pointer-events-none absolute right-2 bottom-10 opacity-75 sm:right-6 sm:opacity-90 lg:right-14 lg:bottom-16">
+      <div className="pointer-events-none absolute right-4 top-[36%] opacity-75 sm:right-8 sm:top-[34%] sm:opacity-90 lg:right-16 lg:top-[32%]">
         <Image
           src="/section-follow/cubeset-2.svg"
           alt=""

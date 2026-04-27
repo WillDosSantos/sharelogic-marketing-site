@@ -67,8 +67,8 @@ export default function AboutPage() {
         />
         <Container className="relative z-10 py-8 sm:py-10 lg:py-12">
           <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
-            <FadeUp className="lg:col-span-5">
-              <h2 className="max-w-xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
+            <FadeUp className="lg:col-span-4">
+              <h2 className="max-w-xl text-xl font-semibold leading-tight tracking-tight text-white sm:text-2xl">
                 ShareLogic, the journey to creating the globally recognised ebonding integration platform
               </h2>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-blue-100 sm:text-lg">
@@ -77,13 +77,13 @@ export default function AboutPage() {
                 at scale.
               </p>
             </FadeUp>
-            <FadeUp delay={0.08} className="relative mx-auto flex w-full max-w-2xl justify-center lg:col-span-7">
+            <FadeUp delay={0.08} className="relative mx-auto flex w-full max-w-3xl justify-center lg:col-span-8 lg:justify-end">
               <Image
                 src="/about/img-platform.png"
                 alt="ShareLogic integration platform illustration"
                 width={900}
                 height={640}
-                className="h-auto w-full max-h-[min(280px,42vh)] object-contain sm:max-h-[min(320px,45vh)] lg:max-h-[min(360px,48vh)]"
+                className="h-auto w-full max-h-[min(340px,50vh)] object-contain sm:max-h-[min(420px,58vh)] lg:max-h-[min(520px,64vh)]"
                 unoptimized
               />
             </FadeUp>
@@ -131,7 +131,6 @@ export default function AboutPage() {
                     unoptimized
                   />
                 </div>
-                <div className="h-2 bg-[#1F53FF]" aria-hidden />
               </div>
             </FadeUp>
             <FadeUp delay={0.08} className="lg:col-span-7">

@@ -4,6 +4,7 @@ export type NavChild = {
   label: string;
   href: string;
   description?: string;
+  icon?: string;
 };
 
 export type NavGroup = {

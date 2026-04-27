@@ -656,7 +656,7 @@ export function UnifiProductTemplate({ product }: Props) {
           <div className="mt-12 grid items-center gap-10 lg:mt-14 lg:grid-cols-12 lg:gap-12">
             <FadeUp delay={0.08} className="lg:col-span-5">
               <p className="text-sm font-bold text-[#2750F5]">Enterprise</p>
-              <h3 className="mt-4 text-balance text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+              <h3 className="mt-4 text-balance text-4xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
                 Best suited for complex integration environments
               </h3>
               <p className="mt-5 text-lg leading-relaxed text-slate-600">

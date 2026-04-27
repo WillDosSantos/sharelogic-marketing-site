@@ -6,8 +6,18 @@ export const mainNavigation: NavGroup[] = [
     id: "products",
     label: "Products",
     children: [
-      { label: "Easy API", href: "/products/easy-api", description: "Composable API surfaces for governed integrations." },
-      { label: "Unifi", href: "/products/unifi", description: "Unified connectivity across enterprise systems." },
+      {
+        label: "Easy API",
+        href: "/products/easy-api",
+        description: "Composable API surfaces for governed integrations.",
+        icon: "/nav/nav-icon-easy-api.svg",
+      },
+      {
+        label: "Unifi",
+        href: "/products/unifi",
+        description: "Unified connectivity across enterprise systems.",
+        icon: "/nav/nav-icon-unifi.svg",
+      },
     ],
   },
   {
@@ -24,9 +34,9 @@ export const mainNavigation: NavGroup[] = [
     id: "company",
     label: "Company",
     children: [
-      { label: "About", href: "/about" },
-      { label: "Careers", href: "/careers" },
-      { label: "Contact", href: "/contact" },
+      { label: "About", href: "/about", icon: "/nav/nav-icon-about.svg" },
+      { label: "Careers", href: "/careers", icon: "/nav/nav-icon-careers.svg" },
+      { label: "Contact", href: "/contact", icon: "/nav/nav-icon-contact.svg" },
     ],
   },
 ];
