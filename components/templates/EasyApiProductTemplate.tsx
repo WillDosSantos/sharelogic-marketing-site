@@ -8,9 +8,9 @@ import { FadeUp } from "@/components/motion/FadeUp";
 import { BUTTON_MOTION } from "@/lib/motion/button";
 import type { ProductPageContent } from "@/lib/types/content";
 
-const HERO_NAVY = "#152134";
+const HERO_NAVY = "#2750F5";
 const HERO_ACCENT = "#2b59ff";
-const FINAL_CTA_BG = "#0a111f";
+const FINAL_CTA_BG = "#2750F5";
 const FINAL_CTA_BLUE = "#2e5bff";
 
 type Props = {
@@ -51,35 +51,40 @@ export function EasyApiProductTemplate(_props: Props) {
           }}
         />
 
-        <div className="pointer-events-none absolute left-0 top-[18%] hidden pl-2 md:block lg:pl-6">
-          <Image
-            src="/easyapi/cubes-left.png"
-            alt=""
-            width={220}
-            height={320}
-            className="h-auto max-h-[min(340px,48vh)] w-auto max-w-[min(220px,28vw)]"
-            priority
-            unoptimized
-          />
-        </div>
-        <div className="pointer-events-none absolute right-0 top-[20%] hidden pr-2 md:block lg:pr-6">
-          <Image
-            src="/easyapi/cubes-right.png"
-            alt=""
-            width={240}
-            height={300}
-            className="h-auto max-h-[min(320px,46vh)] w-auto max-w-[min(240px,30vw)]"
-            priority
-            unoptimized
-          />
+        <div className="pointer-events-none absolute inset-x-0 top-[18%] hidden md:block" aria-hidden>
+          <div className="mx-auto flex w-full max-w-6xl items-start justify-between px-4 sm:px-6 lg:px-8">
+            <Image
+              src="/easyapi/hero/cubes-1.png"
+              alt=""
+              width={260}
+              height={320}
+              className="h-auto max-h-[min(420px,56vh)] w-auto max-w-[min(270px,28vw)] lg:max-w-[min(300px,26vw)]"
+              priority
+              unoptimized
+            />
+            <Image
+              src="/easyapi/hero/cubes-2.png"
+              alt=""
+              width={260}
+              height={320}
+              className="h-auto max-h-[min(420px,56vh)] w-auto max-w-[min(270px,28vw)] lg:max-w-[min(300px,26vw)]"
+              priority
+              unoptimized
+            />
+          </div>
         </div>
 
         <Container className="relative z-10 flex min-h-[660px] flex-col justify-center py-14 sm:py-16 lg:py-20">
           <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
             <FadeUp className="mb-6 inline-flex">
-              <span className="rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white/95 backdrop-blur-sm">
-                easyapi
-              </span>
+              <Image
+                src="/easyapi/easyapi.svg"
+                alt="Easy API"
+                width={144}
+                height={48}
+                className="h-[4.7rem] w-auto"
+                priority
+              />
             </FadeUp>
 
             <FadeUp delay={0.08}>
@@ -120,33 +125,18 @@ export function EasyApiProductTemplate(_props: Props) {
         </Container>
       </section>
 
-      <section
-        className="relative overflow-hidden border-b border-white/10 text-white"
-        style={{ backgroundColor: HERO_NAVY }}
-      >
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.12]"
-          aria-hidden
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
+      <section className="relative overflow-hidden border-b border-slate-200 bg-slate-50 text-slate-900">
         <Container className="relative z-10 py-14 sm:py-16 lg:py-20">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               <FadeUp>
-                <span
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/5 text-lg font-semibold text-white"
-                  aria-hidden
-                >
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#2750F5] text-lg font-semibold text-white" aria-hidden>
                   !
                 </span>
                 <h2 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">
                   Table APIs: Convenient, But Unmanaged
                 </h2>
-                <p className="mt-6 text-base leading-relaxed text-slate-300 sm:text-lg">
+                <p className="mt-6 text-base leading-relaxed text-slate-600 sm:text-lg">
                   Table APIs are essential for integrating with ServiceNow, enabling external systems to read, create, update, and
                   delete records efficiently. However, their default availability allows third-party systems and users to access
                   your data in unintended ways, often bypassing governance processes and remaining unnoticed by platform owners.
@@ -157,7 +147,7 @@ export function EasyApiProductTemplate(_props: Props) {
               </FadeUp>
             </div>
             <FadeUp delay={0.08} className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg">
+              <div className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-[#1f40c4] bg-[#2750F5] shadow-sm">
                 <Image
                   src="/easyapi/api-illustration.png"
                   alt="Managed API gateway concept: governed access to ServiceNow"
@@ -235,46 +225,29 @@ export function EasyApiProductTemplate(_props: Props) {
         </Container>
       </section>
 
-      <section
-        className="relative border-b border-white/10 text-white"
-        style={{ backgroundColor: HERO_NAVY }}
-      >
-        <Container className="border-t border-white/10 py-14 sm:py-16 lg:py-20">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[#FDC443] text-slate-900">
+        <div className="absolute inset-x-0 top-0 h-2 bg-[#2750F5]" aria-hidden />
+        <div className="pointer-events-none absolute -right-28 -bottom-40 h-[420px] w-[420px] rounded-full border-[3px] border-dashed border-white/70" aria-hidden />
+        <div className="pointer-events-none absolute right-4 -bottom-52 h-[360px] w-[360px] rounded-full border-[3px] border-dashed border-white/70" aria-hidden />
+        <div className="pointer-events-none absolute right-16 top-14 h-6 w-6 rounded-full border-4 border-white/85" aria-hidden />
+        <div className="pointer-events-none absolute right-2 top-16 h-12 w-12 rounded-full bg-white/90" aria-hidden />
+        <div className="pointer-events-none absolute right-16 top-32 h-7 w-7 rounded-full bg-white/85" aria-hidden />
+        <div className="pointer-events-none absolute right-[39%] top-28 hidden h-7 w-7 rounded-full bg-white/85 md:block" aria-hidden />
+        <Container className="relative z-10 py-16 sm:py-20 lg:py-24">
           <FadeUp className="max-w-3xl">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Control, Visibility and Governance</h2>
-            <p className="mt-4 text-lg leading-relaxed text-slate-300 sm:text-xl">
+            <p className="mt-4 text-lg leading-relaxed text-slate-800 sm:text-xl">
               Easy API provides the control and visibility needed to safely manage ServiceNow APIs as more integrations are needed.
             </p>
           </FadeUp>
         </Container>
       </section>
 
-      <section
-        className="relative overflow-hidden border-b border-white/10 text-white"
-        style={{ backgroundColor: HERO_NAVY }}
-      >
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.12]"
-          aria-hidden
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.18]"
-          aria-hidden
-          style={{
-            backgroundImage: "url('/easyapi/dot-grid.png')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "120px 120px",
-          }}
-        />
+      <section className="relative overflow-hidden border-b border-slate-200 bg-slate-50 text-slate-900">
         <Container className="relative z-10 py-16 sm:py-20 lg:py-24">
-          <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
             <FadeUp className="order-1">
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0d1524] shadow-xl">
+              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <Image
                   src="/easyapi/ui-1.png"
                   alt="Easy API requests view in the product UI"
@@ -301,16 +274,16 @@ export function EasyApiProductTemplate(_props: Props) {
                 },
               ].map((item, index) => (
                 <FadeUp key={item.title} delay={index * 0.05}>
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-5 shadow-sm backdrop-blur-sm sm:px-6 sm:py-6">
-                    <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                    <p className="mt-2 text-base leading-relaxed text-slate-300">{item.body}</p>
+                  <div className="rounded-2xl border border-slate-200 bg-[#f2f2f2] px-5 py-5 shadow-sm sm:px-6 sm:py-6">
+                    <h3 className="text-lg font-semibold text-slate-900 sm:text-xl">{item.title}</h3>
+                    <p className="mt-2 text-base leading-relaxed text-slate-700">{item.body}</p>
                   </div>
                 </FadeUp>
               ))}
             </div>
           </div>
 
-          <div className="mt-20 grid items-start gap-12 lg:mt-24 lg:grid-cols-2 lg:gap-16">
+          <div className="mt-10 grid items-start gap-8 lg:mt-10 lg:grid-cols-2 lg:gap-10">
             <div className="flex flex-col gap-4 lg:order-1">
               {[
                 {
@@ -323,15 +296,15 @@ export function EasyApiProductTemplate(_props: Props) {
                 },
               ].map((item, index) => (
                 <FadeUp key={`row2-${item.title}`} delay={index * 0.05}>
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.06] px-5 py-5 shadow-sm backdrop-blur-sm sm:px-6 sm:py-6">
-                    <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                    <p className="mt-2 text-base leading-relaxed text-slate-300">{item.body}</p>
+                  <div className="rounded-2xl border border-slate-200 bg-[#f2f2f2] px-5 py-5 shadow-sm sm:px-6 sm:py-6">
+                    <h3 className="text-lg font-semibold text-slate-900 sm:text-xl">{item.title}</h3>
+                    <p className="mt-2 text-base leading-relaxed text-slate-700">{item.body}</p>
                   </div>
                 </FadeUp>
               ))}
             </div>
             <FadeUp delay={0.06} className="lg:order-2">
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0d1524] shadow-xl">
+              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                 <Image
                   src="/easyapi/ui-2.png"
                   alt="Easy API systems view in the product UI"
@@ -457,26 +430,14 @@ export function EasyApiProductTemplate(_props: Props) {
         </Container>
       </section>
 
-      <section
-        className="relative overflow-hidden border-b border-white/10 text-white"
-        style={{ backgroundColor: HERO_NAVY }}
-      >
+      <section className="relative overflow-hidden border-b border-slate-200 bg-white text-slate-900">
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.1]"
+          className="pointer-events-none absolute right-0 top-0 h-full w-[min(65%,720px)] opacity-60"
           aria-hidden
           style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div
-          className="pointer-events-none absolute right-0 top-0 h-full w-[min(65%,720px)] opacity-[0.22]"
-          aria-hidden
-          style={{
-            backgroundImage: "url('/easyapi/dot-grid.png')",
+            backgroundImage: "radial-gradient(circle at center, rgb(203 213 225) 1px, transparent 1px)",
             backgroundRepeat: "repeat",
-            backgroundSize: "100px 100px",
+            backgroundSize: "10px 10px",
             maskImage: "linear-gradient(to left, black 55%, transparent)",
             WebkitMaskImage: "linear-gradient(to left, black 55%, transparent)",
           }}
@@ -487,7 +448,7 @@ export function EasyApiProductTemplate(_props: Props) {
               Protect the Integrity of the Platform
             </h2>
           </FadeUp>
-          <div className="mt-8 border-t border-white/15" aria-hidden />
+          <div className="mt-8 border-t border-slate-200" aria-hidden />
 
           <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
             {[
@@ -498,7 +459,7 @@ export function EasyApiProductTemplate(_props: Props) {
               <FadeUp key={`integrity-${index}`} delay={index * 0.06}>
                 <div className="flex flex-col items-start text-left">
                   <span
-                    className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/[0.08] text-white"
+                    className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-900"
                     aria-hidden
                   >
                     <svg width="28" height="24" viewBox="0 0 28 24" fill="none" className="translate-x-0.5">
@@ -507,12 +468,12 @@ export function EasyApiProductTemplate(_props: Props) {
                         stroke="currentColor"
                         strokeLinecap="round"
                         strokeWidth="1.35"
-                        className="text-white/85"
+                        className="text-slate-700"
                       />
                       <path d="M12 2l-1.5 6h4.5l-1.5 7.5 5.5-8h-3.5l1-6.5z" className="fill-amber-300" />
                     </svg>
                   </span>
-                  <p className="mt-5 text-base leading-relaxed text-slate-300">{text}</p>
+                  <p className="mt-5 text-base leading-relaxed text-slate-700">{text}</p>
                 </div>
               </FadeUp>
             ))}
@@ -576,32 +537,22 @@ export function EasyApiProductTemplate(_props: Props) {
         </Container>
       </section>
 
-      <section
-        className="relative overflow-hidden border-t border-white/10 text-white"
-        style={{ backgroundColor: FINAL_CTA_BG }}
-      >
-        <div className="pointer-events-none absolute -right-10 top-8 hidden opacity-50 md:block" aria-hidden>
-          <div className="relative h-56 w-56">
-            <div className="absolute inset-0 rounded-full border border-dashed border-white/20" />
-            <div className="absolute inset-6 rounded-full border border-dashed border-white/15" />
-            <div className="absolute right-2 top-6">
-              <Image src="/section-follow/cubset-1.svg" alt="" width={72} height={72} className="h-16 w-16" />
-            </div>
-            <div className="absolute bottom-4 right-10">
-              <Image src="/section-follow/cubset-1.svg" alt="" width={56} height={56} className="h-12 w-12 opacity-90" />
-            </div>
+      <section className="relative overflow-hidden border-t border-slate-200 bg-white text-slate-900">
+        <div className="absolute inset-x-0 top-0 h-1 bg-[#2750F5]" aria-hidden />
+        <div className="pointer-events-none absolute -left-8 top-1/2 hidden -translate-y-1/2 md:block" aria-hidden>
+          <div className="relative h-52 w-52">
+            <div className="absolute inset-0 rounded-full border border-dashed border-[#cfd6ec]" />
+            <div className="absolute inset-8 rounded-full border border-dashed border-[#cfd6ec]" />
+            <div className="absolute bottom-0 left-16 h-10 w-10 rotate-45 rounded bg-[#c8c4f7]" />
+            <div className="absolute left-14 top-[7.5rem] h-4 w-4 rotate-45 rounded-sm bg-[#c8c4f7]" />
           </div>
         </div>
-        <div className="pointer-events-none absolute -left-8 bottom-6 hidden opacity-50 md:block" aria-hidden>
+        <div className="pointer-events-none absolute -right-8 top-8 hidden md:block" aria-hidden>
           <div className="relative h-52 w-52">
-            <div className="absolute inset-0 rounded-full border border-dashed border-white/20" />
-            <div className="absolute inset-5 rounded-full border border-dashed border-white/12" />
-            <div className="absolute bottom-6 left-4">
-              <Image src="/section-follow/cubeset-2.svg" alt="" width={68} height={68} className="h-14 w-14" />
-            </div>
-            <div className="absolute left-10 top-8">
-              <Image src="/section-follow/cubeset-2.svg" alt="" width={52} height={52} className="h-11 w-11 opacity-90" />
-            </div>
+            <div className="absolute inset-0 rounded-full border border-dashed border-[#cfd6ec]" />
+            <div className="absolute inset-8 rounded-full border border-dashed border-[#cfd6ec]" />
+            <div className="absolute left-10 top-0 h-10 w-10 rotate-45 rounded bg-[#c8c4f7]" />
+            <div className="absolute left-24 top-12 h-4 w-4 rotate-45 rounded-sm bg-[#c8c4f7]" />
           </div>
         </div>
 
@@ -611,7 +562,7 @@ export function EasyApiProductTemplate(_props: Props) {
               <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
                 Take Control of Your ServiceNow APIs
               </h2>
-              <p className="mt-5 text-pretty text-lg leading-relaxed text-slate-300 sm:text-xl">
+              <p className="mt-5 text-pretty text-lg leading-relaxed text-slate-700 sm:text-xl">
                 Start a free trial and see how Easy API helps you manage and control your ServiceNow APIs.
               </p>
             </FadeUp>
@@ -631,8 +582,7 @@ export function EasyApiProductTemplate(_props: Props) {
                 whileHover={BUTTON_MOTION.whileHover}
                 whileTap={BUTTON_MOTION.whileTap}
                 transition={BUTTON_MOTION.transition}
-                className="inline-flex w-full min-w-[200px] items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-semibold shadow-md transition-colors hover:bg-slate-100 sm:w-auto"
-                style={{ color: FINAL_CTA_BLUE }}
+                className="inline-flex w-full min-w-[200px] items-center justify-center rounded-full border border-[#8ea2eb] bg-white px-8 py-3.5 text-sm font-semibold text-[#2750F5] shadow-sm transition-colors hover:bg-slate-50 sm:w-auto"
               >
                 See How It Works
               </MotionLink>

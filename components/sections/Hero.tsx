@@ -16,7 +16,7 @@ type Props = {
 export function Hero({ title, subtitle, children, className, visual }: Props) {
   const copy = (
     <>
-      <h1 className="text-balance text-3xl font-black tracking-tight text-white sm:text-4xl">
+      <h1 className="text-balance text-4xl font-black tracking-tight text-white sm:text-5xl">
         {title}
       </h1>
       {subtitle ? <p className="mt-4 text-xl text-pretty text-base leading-relaxed text-white">{subtitle}</p> : null}
