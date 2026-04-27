@@ -21,3 +21,105 @@ body {
   color: var(--foreground);
   font-family: var(--font-red-hat-display), ui-sans-serif, system-ui, sans-serif;
 }
+
+.grid-streak-overlay,
+.grid-streak-overlay .grid-streak-base,
+.grid-streak-overlay .grid-streak-node {
+  pointer-events: none;
+  position: absolute;
+}
+
+.grid-streak-overlay {
+  inset: 0;
+  --grid-streak-step: 34px;
+}
+
+.grid-streak-overlay .grid-streak-base {
+  inset: 0;
+  opacity: 0.16;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: var(--grid-streak-step) var(--grid-streak-step);
+}
+
+.grid-streak-overlay .grid-streak-node {
+  inset: auto;
+  opacity: 0;
+}
+
+.grid-streak-overlay .grid-streak-node-h {
+  width: 160px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  animation: home-grid-streak-burst-h 6s linear infinite;
+}
+
+.grid-streak-overlay .grid-streak-node-v {
+  width: 1px;
+  height: 160px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0));
+  animation: home-grid-streak-burst-v 6s linear infinite;
+}
+
+.grid-streak-overlay .grid-streak-node-1 {
+  top: calc(var(--grid-streak-step) * 5);
+  left: calc(var(--grid-streak-step) * 4);
+  animation-delay: 0s;
+}
+
+.grid-streak-overlay .grid-streak-node-2 {
+  top: calc(var(--grid-streak-step) * 9);
+  left: calc(var(--grid-streak-step) * 14);
+  animation-delay: 1.5s;
+}
+
+.grid-streak-overlay .grid-streak-node-3 {
+  top: calc(var(--grid-streak-step) * 7);
+  left: calc(var(--grid-streak-step) * 22);
+  animation-delay: 3s;
+}
+
+.grid-streak-overlay .grid-streak-node-4 {
+  top: calc(var(--grid-streak-step) * 3);
+  left: calc(var(--grid-streak-step) * 30);
+  animation-delay: 4.5s;
+}
+
+@keyframes home-grid-streak-burst-h {
+  0%,
+  4%,
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  8% {
+    opacity: 0.95;
+  }
+  22% {
+    opacity: 0;
+    transform: translateX(180px);
+  }
+}
+
+@keyframes home-grid-streak-burst-v {
+  0%,
+  4%,
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  8% {
+    opacity: 0.92;
+  }
+  22% {
+    opacity: 0;
+    transform: translateY(180px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-streak-overlay .grid-streak-node {
+    animation: none;
+  }
+}

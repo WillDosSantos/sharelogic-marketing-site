@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
+import { GridStreakOverlay } from "@/components/effects/GridStreakOverlay";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { BUTTON_MOTION } from "@/lib/motion/button";
 import type { ProductPageContent } from "@/lib/types/content";
@@ -26,6 +27,7 @@ export function EasyApiProductTemplate(_props: Props) {
         className="relative overflow-hidden border-b border-white/10 text-white"
         style={{ backgroundColor: HERO_NAVY }}
       >
+        <GridStreakOverlay />
         <div
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_0%,rgba(43,89,255,0.2),transparent_55%)]"
           aria-hidden
@@ -147,7 +149,7 @@ export function EasyApiProductTemplate(_props: Props) {
               </FadeUp>
             </div>
             <FadeUp delay={0.08} className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-[#1f40c4] bg-[#2750F5] shadow-sm">
+              <div className="relative w-full max-w-lg p-8 overflow-hidden rounded-3xl border border-[#1f40c4] bg-[#2750F5] shadow-sm">
                 <Image
                   src="/easyapi/api-illustration.png"
                   alt="Managed API gateway concept: governed access to ServiceNow"

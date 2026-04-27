@@ -11,6 +11,7 @@ import { HomeSection6Products } from "@/components/home/HomeSection6Products";
 import { HomeSection7Documentation } from "@/components/home/HomeSection7Documentation";
 import { HomeSectionFollow } from "@/components/home/HomeSectionFollow";
 import { HomeHeroArtboard } from "@/components/home/HomeHeroImages";
+import { GridStreakOverlay } from "@/components/effects/GridStreakOverlay";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { siteConfig } from "@/lib/data/site";
@@ -68,11 +69,12 @@ export default function HomePage() {
 
       <section
         id="section-3"
-        className="border-t border-slate-200 bg-[#2750F5]"
+        className="relative overflow-hidden border-t border-slate-200 bg-[#2750F5]"
         aria-labelledby="section-3-heading"
       >
+        <GridStreakOverlay />
         <Container className="py-12 sm:py-14">
-          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
+          <div className="relative z-10 flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
             <FadeUp className="flex min-w-0 shrink-0 justify-center lg:w-[46%] lg:justify-start">
               <div className="relative w-full max-w-xl">
                 <Image

@@ -117,6 +117,7 @@ export function HomeSection4Showcase() {
                     fill
                     className="object-contain object-center"
                     sizes="(max-width: 1024px) 100vw, 50vw"
+                    unoptimized
                   />
                 </motion.div>
               </AnimatePresence>

@@ -68,6 +68,7 @@ export function HomeSection5Showcase() {
                     fill
                     className="object-contain object-left"
                     sizes="(max-width: 1024px) 100vw, 50vw"
+                    unoptimized
                   />
                 </motion.div>
               </AnimatePresence>
