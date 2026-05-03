@@ -5,10 +5,10 @@ import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { Hero } from "@/components/sections/Hero";
 import { SectionIntro } from "@/components/sections/SectionIntro";
 import { TrustedBy } from "@/components/sections/TrustedBy";
-import { HomeSection4Showcase } from "@/components/home/HomeSection4Showcase";
-import { HomeSection5Showcase } from "@/components/home/HomeSection5Showcase";
-import { HomeSection6Products } from "@/components/home/HomeSection6Products";
-import { HomeSection7Documentation } from "@/components/home/HomeSection7Documentation";
+import { HomeSectionUnifi } from "@/components/home/HomeSectionUnifi";
+import { HomeSectionEasyAPI } from "@/components/home/HomeSectionEasyAPI";
+// import { HomeSection6Products } from "@/components/home/HomeSection6Products";
+// import { HomeSection7Documentation } from "@/components/home/HomeSection7Documentation";
 import { HomeSectionFollow } from "@/components/home/HomeSectionFollow";
 import { HomeHeroArtboard } from "@/components/home/HomeHeroImages";
 import { GridStreakOverlay } from "@/components/effects/GridStreakOverlay";
@@ -17,7 +17,7 @@ import { LinkButton } from "@/components/ui/LinkButton";
 import { siteConfig } from "@/lib/data/site";
 
 export const metadata = buildMetadata({
-  title: `${siteConfig.name} — Enterprise integration & workflows`,
+  title: `${siteConfig.name} — Smarter ServiceNow Integrations`,
   description: siteConfig.description,
   path: "/",
 });
@@ -33,35 +33,34 @@ export default function HomePage() {
         <LinkButton href="/contact" hero>
           Talk to an Integration Specialist
         </LinkButton>
-        <LinkButton href="/products/easy-api" variant="secondary" hero>
+        {/* <LinkButton href="/products/easy-api" variant="secondary" hero>
           Watch Overview
-        </LinkButton>
+        </LinkButton> */}
       </Hero>
 
       <SectionIntro
-        title="Integration failures aren’t technical problems. They’re governance problems."
-        description="This isn’t about poor engineering. It’s about how integrations are created and maintained under  real-world pressure. Governance defines whether integrations scale — or quietly decay."
+        title="Integrations shape how your business is experienced"
+        description="Most businesses treat integrations as a technical necessity.
+Smart ones see them as critical to building trust and delivering exceptional customer experiences."
+        // descripton2="Smart businesses realise that integrations are fundamental in building trust. Most think of them as a technical problem with little thought about the overall experience. The reality is that integrations are critical to the success of any business."
       />
 
       <FeatureGrid
         columns={3}
         items={[
           {
-            title: "What shows up during incidents",
-            description:
-              "When incidents occur, teams face unclear ownership, undocumented logic, and hidden dependencies in integrations. Fixes depend on tribal knowledge rather than a shared understanding. Effective governance is key to resolving incidents swiftly and preventing outages.",
+            title: "Strategic Governance",
+            description: "ServiceNow gives you many ways to build integrations. But without proper strategy, standards, and governance, things quickly become chaotic and hard to manage at scale.\n\nShareLogic delivers the strategy, standards, and governance framework you need to run integrations confidently and reliably — year after year.",
             iconSrc: "/section-2/icon-incident.svg",
           },
           {
-            title: "What accumulates over time",
-            description:
-              "Point-to-point logic spans various platforms. Documentation can become outdated, and exceptions accumulate. Each modification raises the risk, even if everything seems fine. Without proper governance, complexity builds up unnoticed.",
+            title: "Real-Time Visibility",
+            description: "With traditional integrations, problems can stay hidden for weeks or months. This lack of visibility quietly causes missed SLAs, poor data quality, and damaged customer experiences.\n\nReal-time visibility into every integration is essential. It lets you catch issues early and keep operations smooth and reliable.",
             iconSrc: "/section-2/icon-cube.svg",
           },
           {
-            title: "What becomes hard to explain",
-            description:
-              "The reasons for an integration's existence, ownership, and potential impacts of changes are often unclear. Governance equips leaders with the necessary language to justify their decisions, conduct audits, and secure investments.",
+            title: "Operational Control",
+            description: "Integrations can quickly turn from assets into liabilities as you scale. Technical debt explodes with every new deployment.\n\nThe only way to stay in control is through clear standards for how integrations are built, operated, and documented.",
             iconSrc: "/section-2/icon-warning.svg",
           },
         ]}
@@ -89,22 +88,22 @@ export default function HomePage() {
             </FadeUp>
             <FadeUp delay={0.06} className="min-w-0 lg:flex-1">
               <h2 id="section-3-heading" className="text-3xl font-semibold tracking-tight text-white">
-                The integration governance layer for ServiceNow
+                Governance for ServiceNow Integrations
               </h2>
               <p className="mt-4 text-pretty text-base text-xl leading-relaxed text-white">
-                ShareLogic enhances governance and visibility in ServiceNow, ensuring consistent tool usage and informed
-                decision-making across sectors.
+                Real visibility. Real control. Exceptional experiences.
+                ShareLogic delivers the governance layer ServiceNow doesn’t — so your integrations become a competitive advantage instead of a constant headache.
               </p>
             </FadeUp>
           </div>
         </Container>
       </section>
-      <HomeSection6Products />
-      <HomeSection4Showcase />
-      <HomeSection5Showcase />
+      {/* <HomeSection6Products /> */}
+      <HomeSectionUnifi />
+      <HomeSectionEasyAPI />
       
       <TrustedBy />
-      <HomeSection7Documentation />
+      {/* <HomeSection7Documentation /> */}
 
       <HomeSectionFollow />
     </>

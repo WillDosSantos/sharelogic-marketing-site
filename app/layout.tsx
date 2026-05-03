@@ -15,12 +15,12 @@ const redHatDisplay = Red_Hat_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Enterprise integration & workflows`,
+    default: `${siteConfig.name} — Smarter ServiceNow Integrations`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   openGraph: {
-    title: `${siteConfig.name} — Enterprise integration & workflows`,
+    title: `${siteConfig.name} — Smarter ServiceNow Integrations`,
     description: siteConfig.description,
     siteName: siteConfig.name,
     locale: "en_US",

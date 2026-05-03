@@ -15,79 +15,61 @@ type Slide = {
   imageSrc: string;
 };
 
-const SHARED_BODY =
-  "Easy API streamlines governance with clear integration standards, clarifying permissions and execution. It establishes ownership and offers a framework for evaluating changes, fostering team collaboration while ensuring quick delivery.";
-
 const SLIDES: Slide[] = [
   {
-    id: "easy-api-1",
-    title: "Outbound conditions & criteria",
-    body: SHARED_BODY,
-    imageSrc: "/home/easy-api-image-1.png",
+    id: "unifi-governance",
+    title: "Embedded Governance",
+    body:
+      `Stop guessing what’s happening with your integrations.
+      Unifi gives you total visibility into every single one — in real time —
+      while automatically enforcing standards and governance. No more surprises.
+      No more silent failures. Just complete control.`,
+    imageSrc: "/home/unifi-img-1.png",
   },
   {
-    id: "easy-api-2",
-    title: "Policy-aware publishing",
-    body: SHARED_BODY,
-    imageSrc: "/home/easy-api-img-2.png",
+    id: "unifi-scale",
+    title: "Enterprise-Scale Integration",
+    body:
+      `Scale from 10 to 500+ integrations without the usual chaos.
+      Unifi’s architecture is designed for maintainability from day one. You’ll
+      slash technical debt, reduce maintenance costs, and actually keep your
+      integration estate healthy as you grow.`,
+    imageSrc: "/home/unifi-img-2.png",
   },
   {
-    id: "easy-api-3",
-    title: "Contracts operators can trust",
-    body: SHARED_BODY,
-    imageSrc: "/home/easy-api-img-3.png",
+    id: "unifi-native",
+    title: "100% ServiceNow Native",
+    body:
+      `No middleware. No third-party tools. No extra vendors.
+      Unifi lives entirely inside ServiceNow. Your data stays secure, audits
+      become simple, and you stay in full control — without adding complexity or risk.`,
+    imageSrc: "/home/unifi-img-3.png",
   },
 ];
 
-export function HomeSection5Showcase() {
+export function HomeSectionUnifi() {
   const [active, setActive] = useState(0);
   const MotionLink = motion.create(Link);
 
   return (
-    <section
-      id="section-5"
-      className="bg-slate-50"
-      aria-labelledby="section-5-heading"
-    >
+    <section id="section-4" className="border-t border-slate-200 bg-white" aria-labelledby="section-4-heading">
       <Container className="py-12 sm:py-14 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-14 xl:gap-20">
-          <div className="relative flex min-h-[280px] items-start justify-center pt-12 pb-8 sm:min-h-[360px] sm:pt-14 sm:pb-10 lg:pt-16 lg:pb-10">
-            <div className="relative aspect-[850/869] w-full max-w-xl">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={SLIDES[active].id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.22 }}
-                  className="absolute inset-0"
-                >
-                  <Image
-                    src={SLIDES[active].imageSrc}
-                    alt=""
-                    fill
-                    className="object-contain object-left"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    unoptimized
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
-
           <div className="min-w-0">
             <p className="inline-flex rounded-lg bg-[#2750F5] px-3 py-1.5 text-sm font-bold tracking-tight text-white">
-              easyapi
+              Unifi
             </p>
             <h2
-              id="section-5-heading"
+              id="section-4-heading"
               className="mt-4 text-2xl font-semibold tracking-tight text-slate-900 sm:text-[1.65rem]"
             >
-              Governed APIs without the drag
+              The eBonding Integration Platform for ServiceNow
             </h2>
             <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-slate-600">
-              This approach offers seamless access to Unifi and Easy API, creating a cohesive story. It emphasizes a shared
-              vision that covers various domains, enabling informed buyers to make timely choices.
+              Unifi is built for enterprise customers who get it.
+              You already understand how critical — and how difficult — it is to
+              create a truly scalable integration strategy in ServiceNow.
+              Unifi was designed specifically for you.
             </p>
 
             <div className="mt-8 flex flex-col gap-3">
@@ -118,7 +100,7 @@ export function HomeSection5Showcase() {
             </div>
 
             <MotionLink
-              href="/products/easy-api"
+              href="/products/unifi"
               whileHover={BUTTON_MOTION.whileHover}
               whileTap={BUTTON_MOTION.whileTap}
               transition={BUTTON_MOTION.transition}
@@ -126,6 +108,30 @@ export function HomeSection5Showcase() {
             >
               Learn more
             </MotionLink>
+          </div>
+
+          <div className="relative flex min-h-[280px] items-start justify-center rounded-[2rem] px-6 pt-12 pb-8 sm:min-h-[360px] sm:pt-14 sm:pb-10 lg:px-8 lg:pt-16 lg:pb-10">
+            <div className="relative aspect-[939/952] w-full max-w-lg">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={SLIDES[active].imageSrc}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.22 }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={SLIDES[active].imageSrc}
+                    alt=""
+                    fill
+                    className="object-contain object-center"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    unoptimized
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </Container>
