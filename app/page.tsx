@@ -15,6 +15,8 @@ import { GridStreakOverlay } from "@/components/effects/GridStreakOverlay";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { LinkButton } from "@/components/ui/LinkButton";
 import { siteConfig } from "@/lib/data/site";
+import { sectionHeadingH2 } from "@/lib/section-heading";
+import { cn } from "@/lib/utils/cn";
 
 export const metadata = buildMetadata({
   title: `${siteConfig.name} — Smarter ServiceNow Integrations`,

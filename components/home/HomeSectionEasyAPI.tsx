@@ -6,6 +6,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { BUTTON_MOTION } from "@/lib/motion/button";
+import { sectionHeadingH2 } from "@/lib/section-heading";
 import { cn } from "@/lib/utils/cn";
 
 type Slide = {
@@ -36,9 +37,17 @@ const SLIDES: Slide[] = [
   },
 ];
 
+const MotionLink = motion.create(Link);
+
+/** Hover/tap without boxShadow so selected border + shadow from className are not overridden. */
+const SLIDE_CARD_MOTION = {
+  whileHover: { y: -2 },
+  whileTap: { y: 0, scale: 0.985 },
+  transition: BUTTON_MOTION.transition,
+} as const;
+
 export function HomeSectionEasyAPI() {
   const [active, setActive] = useState(0);
-  const MotionLink = motion.create(Link);
 
   return (
     <section
@@ -78,7 +87,7 @@ export function HomeSectionEasyAPI() {
             </p>
             <h2
               id="section-5-heading"
-              className="mt-4 text-2xl font-semibold tracking-tight text-slate-900 sm:text-[1.65rem]"
+              className={cn(sectionHeadingH2, "mt-4 text-slate-900")}
             >
               The Secure Replacement for ServiceNow Table APIs
             </h2>
@@ -99,14 +108,14 @@ export function HomeSectionEasyAPI() {
                     aria-pressed={isActive}
                     aria-label={slide.title}
                     onClick={() => setActive(index)}
-                    whileHover={BUTTON_MOTION.whileHover}
-                    whileTap={BUTTON_MOTION.whileTap}
-                    transition={BUTTON_MOTION.transition}
+                    whileHover={SLIDE_CARD_MOTION.whileHover}
+                    whileTap={SLIDE_CARD_MOTION.whileTap}
+                    transition={SLIDE_CARD_MOTION.transition}
                     className={cn(
                       "w-full rounded-xl border bg-white p-4 text-left ring-0 transition-[box-shadow,border-color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2750F5]/30",
                       isActive
-                        ? "border-[#2750F5] shadow-[0_0_0_1px_#2750F5,0_12px_32px_-8px_rgba(39,80,245,0.28)]"
-                        : "border-slate-200 shadow-sm hover:border-slate-300",
+                        ? "z-[1] border-[#2750F5] shadow-[0_0_0_1px_#2750F5,0_12px_32px_-8px_rgba(39,80,245,0.28)]"
+                        : "z-0 border-slate-200 shadow-sm hover:border-slate-300",
                     )}
                   >
                     <p className="text-sm font-semibold text-slate-900">{slide.title}</p>

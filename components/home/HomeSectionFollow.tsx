@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
+import { sectionHeadingH2 } from "@/lib/section-heading";
+import { cn } from "@/lib/utils/cn";
 import { HomeFollowLeadForm } from "@/components/home/HomeFollowLeadForm";
 
 export function HomeSectionFollow() {
