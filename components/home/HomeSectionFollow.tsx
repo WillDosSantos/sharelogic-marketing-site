@@ -40,11 +40,11 @@ export function HomeSectionFollow() {
 
       <Container className="relative z-10 py-8 sm:py-10 lg:py-12">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 id="section-follow-heading" className={cn(sectionHeadingH2, "text-black")}>
-            Let&apos;s talk about your integrations
+          <h2 id="section-follow-heading" className="text-2xl font-semibold tracking-tight text-black sm:text-3xl">
+            Ready to fix your integrations?
           </h2>
           <p className="mt-3 text-pretty text-base leading-relaxed text-[#666666]">
-            We&apos;d love to hear from you. Please fill out this form.
+            Let&apos;s address the visibility, control, and security issues once and for all.
           </p>
         </div>
 

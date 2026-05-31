@@ -39,7 +39,7 @@ export function FeatureGrid({ items, className, columns = 3 }: Props) {
                  
                 ) : null}
                 <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 whitespace-pre-line">{item.description}</p>
               </div>
             </FadeUp>
           ))}

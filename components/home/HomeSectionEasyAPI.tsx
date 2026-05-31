@@ -16,26 +16,23 @@ type Slide = {
   imageSrc: string;
 };
 
-const SHARED_BODY =
-  "Easy API streamlines governance with clear integration standards, clarifying permissions and execution. It establishes ownership and offers a framework for evaluating changes, fostering team collaboration while ensuring quick delivery.";
-
 const SLIDES: Slide[] = [
   {
-    id: "easy-api-1",
-    title: "Outbound conditions & criteria",
-    body: SHARED_BODY,
+    id: "easyapi-secure",
+    title: "Secure by Default",
+    body: "Stop risky, ungoverned access to your ServiceNow data. EasyAPI gives you complete control over who can access what — with granular permissions and full auditability from day one.",
     imageSrc: "/home/easy-api-image-1.png",
   },
   {
-    id: "easy-api-2",
-    title: "Policy-aware publishing",
-    body: SHARED_BODY,
+    id: "easyapi-governed",
+    title: "Governed Integrations",
+    body: "Turn chaotic point-to-point integrations into clean, governed ones. EasyAPI enforces standards, maintains visibility, and prevents shadow IT from creating backdoors into your platform.",
     imageSrc: "/home/easy-api-img-2.png",
   },
   {
-    id: "easy-api-3",
-    title: "Contracts operators can trust",
-    body: SHARED_BODY,
+    id: "easyapi-simple",
+    title: "Simple and Powerful",
+    body: "Easy for developers. Secure for the business. EasyAPI replaces risky Table API usage with a modern, well-governed alternative that’s faster to implement and much safer to operate at scale.",
     imageSrc: "/home/easy-api-img-3.png",
   },
 ];
@@ -49,7 +46,7 @@ const SLIDE_CARD_MOTION = {
   transition: BUTTON_MOTION.transition,
 } as const;
 
-export function HomeSection5Showcase() {
+export function HomeSectionEasyAPI() {
   const [active, setActive] = useState(0);
 
   return (
@@ -86,17 +83,19 @@ export function HomeSection5Showcase() {
 
           <div className="min-w-0">
             <p className="inline-flex rounded-lg bg-[#2750F5] px-3 py-1.5 text-sm font-bold tracking-tight text-white">
-              easyapi
+              EasyAPI
             </p>
             <h2
               id="section-5-heading"
               className={cn(sectionHeadingH2, "mt-4 text-slate-900")}
             >
-              Governed APIs without the drag
+              The Secure Replacement for ServiceNow Table APIs
             </h2>
             <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-slate-600">
-              This approach offers seamless access to Unifi and Easy API, creating a cohesive story. It emphasizes a shared
-              vision that covers various domains, enabling informed buyers to make timely choices.
+              ServiceNow Table APIs are on by default — wide open and ungoverned.
+              That means anyone can connect, often without oversight, creating
+              security risks and compliance headaches.
+              EasyAPI puts you back in control.
             </p>
 
             <div className="mt-8 flex flex-col gap-3">
